@@ -2,7 +2,7 @@
 
 [build]
   # Dossier de publication (racine du site)
-  publish = "risomes"
+  publish = "."
   
   # Commande de build (aucune nécessaire pour un site statique)
   command = ""
