@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Page d'accueil"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+      
+  - name: "resources"
+    label: "Ressources Intranet"
+    folder: "intranet/resources"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["Formation", "Document", "Outil", "Veille", "Webinaire"]}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Fichier", name: "file", widget: "file", required: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Accès restreint", name: "restricted", widget: "boolean", default: true}
+
+  - name: "news"
+    label: "Actualités"
+    folder: "intranet/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Résumé", name: "summary", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "published", widget: "boolean", default: false}
+

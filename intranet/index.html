@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISOMES - Espace Intranet</title>
+    <link rel="icon" type="image/png" href="../assets/images/Fichier15@2x.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="../index.html">
+                    <img src="../assets/images/Fichier16@2x.png" alt="RISOMES Logo" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="../qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a></li>
+                <li><a href="../nos-solutions.html" class="nav-link">Nos solutions</a></li>
+                <li><a href="../contact.html" class="nav-link">Nous contacter</a></li>
+                <li><a href="../intranet.html" class="nav-link active">Intranet</a></li>
+                <li><button id="logout-btn" class="btn-primary" style="margin-left: 1rem;">Déconnexion</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero page-hero">
+        <div class="container">
+            <h1 class="page-title">Espace Intranet</h1>
+            <p class="page-subtitle">Bienvenue dans votre espace personnel</p>
+            <div id="user-info"></div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Tableau de bord</h2>
+            <div class="dashboard-grid">
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-file-alt"></i> Mes formations</h3>
+                    <p>Accédez à vos supports de formation et suivez votre progression</p>
+                    <a href="#formations" class="btn-primary">Voir mes formations</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-folder-open"></i> Documents</h3>
+                    <p>Consultez vos documents et ressources exclusives</p>
+                    <a href="#documents" class="btn-primary">Mes documents</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-tools"></i> Outils pratiques</h3>
+                    <p>Utilisez nos outils et modèles personnalisés</p>
+                    <a href="#outils" class="btn-primary">Accéder aux outils</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-video"></i> Webinaires</h3>
+                    <p>Regardez nos webinaires et contenus vidéo</p>
+                    <a href="#webinaires" class="btn-primary">Voir les webinaires</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-balance-scale"></i> Veille réglementaire</h3>
+                    <p>Restez informé des dernières évolutions</p>
+                    <a href="#veille" class="btn-primary">Consulter la veille</a>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-users"></i> Forum</h3>
+                    <p>Échangez avec la communauté professionnelle</p>
+                    <a href="#forum" class="btn-primary">Accéder au forum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Updates Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Dernières mises à jour</h2>
+            <div class="updates-list">
+                <div class="update-item">
+                    <div class="update-date">15 Jan 2024</div>
+                    <div class="update-content">
+                        <h4>Nouveau guide : Contrôles en ESSMS</h4>
+                        <p>Un nouveau guide complet sur les contrôles en établissements sociaux et médico-sociaux est maintenant disponible.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">10 Jan 2024</div>
+                    <div class="update-content">
+                        <h4>Webinaire : Enquêtes administratives</h4>
+                        <p>Replay disponible du webinaire sur la méthodologie des enquêtes administratives.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">05 Jan 2024</div>
+                    <div class="update-content">
+                        <h4>Mise à jour réglementaire</h4>
+                        <p>Nouvelles dispositions concernant la protection de l'enfance - Janvier 2024.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/LOGOCOMPLETRISOMES.png" alt="RISOMES Logo Complet" class="footer-logo-full">
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Accueil</a>
+                    <a href="../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="../nos-solutions.html">Nos solutions</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <p>contact@risomes.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RISOMES. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Protection de la page avec Netlify Identity
+        if (window.netlifyIdentity) {
+            netlifyIdentity.on('init', user => {
+                if (!user) {
+                    // Rediriger vers la page de connexion si pas connecté
+                    window.location.href = '../intranet.html';
+                } else {
+                    // Afficher les informations utilisateur
+                    document.getElementById('user-info').innerHTML = 
+                        `<p>Connecté en tant que : <strong>${user.email}</strong></p>`;
+                }
+            });
+
+            // Gestion de la déconnexion
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                netlifyIdentity.logout();
+            });
+
+            netlifyIdentity.on('logout', () => {
+                window.location.href = '../intranet.html';
+            });
+        }
+    </script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
+
