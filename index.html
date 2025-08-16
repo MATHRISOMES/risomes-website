@@ -9,7 +9,7 @@
     <link rel="icon" href="assets/images/Fichier15@2x.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-netlify-identity-button>
     <header class="header">
         <div class="navbar container">
             <a href="index.html" class="nav-brand">
@@ -186,30 +186,16 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
-</html>
-
-
-
-
-    <div id="cgvModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Conditions Générales de Vente (CGV)</h3>
-            <div class="modal-text-content">
-                <!-- CGV content will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <div id="dataModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Politique de confidentialité</h3>
-            <div class="modal-text-content">
-                <!-- Données personnelles content will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-
