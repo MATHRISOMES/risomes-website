@@ -1,0 +1,6 @@
+# Redirections pour Netlify Identity
+/admin/* /admin/index.html 200
+
+# Redirection pour les pages protégées
+/intranet/* /intranet/index.html 200
+

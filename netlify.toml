@@ -1,0 +1,59 @@
+# Configuration Netlify pour RISOMES
+
+[build]
+  # Dossier de publication (racine du site)
+  publish = "."
+  
+  # Commande de build (aucune nécessaire pour un site statique)
+  command = ""
+
+# Redirections et règles de réécriture
+[[redirects]]
+  # Redirection de la racine vers index.html
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  # Gestion des erreurs 404 (supprimée pour laisser Netlify gérer les 404 par défaut ou via _redirects)
+
+# Headers de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Sécurité HTTPS
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    
+    # Protection contre le clickjacking
+    X-Frame-Options = "DENY"
+    
+    # Protection XSS
+    X-XSS-Protection = "1; mode=block"
+    
+    # Type de contenu
+    X-Content-Type-Options = "nosniff"
+    
+    # Politique de référent
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache des assets statiques
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Configuration des formulaires Netlify
+[build.environment]
+  # Variables d'environnement si nécessaire
+  NODE_VERSION = "18"
+
+# Paramètres de déploiement
+[context.production]
+  command = ""
+  
+[context.deploy-preview]
+  command = ""
+
+[context.branch-deploy]
+  command = ""
+

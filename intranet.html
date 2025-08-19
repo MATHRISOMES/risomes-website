@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RISOMES - Intranet</title>
+    <link rel="icon" type="image/png" href="assets/images/Fichier15@2x.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/intranet-auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="assets/images/Fichier16@2x.png" alt="RISOMES Logo" class="nav-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a></li>
+                <li><a href="nos-solutions.html" class="nav-link">Nos solutions</a></li>
+                <li><a href="contact.html" class="nav-link">Nous contacter</a></li>
+                <li><a href="intranet.html" class="nav-link active">Intranet</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero page-hero">
+        <div class="container">
+            <h1 class="page-title">Intranet</h1>
+            <p class="page-subtitle">Service réservé aux abonnés</p>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-card">
+                    <img src="assets/images/Fichier16@2x.png" alt="RISOMES" class="login-logo">
+                    <h2><i class="fas fa-user-lock icon"></i> Connexion à l'intranet</h2>
+                    <p>Accédez à votre espace personnel pour consulter vos formations, documents et ressources exclusives.</p>
+                    
+                    <!-- Zone d'authentification Netlify Identity -->
+                    <div id="netlify-auth-container">
+                        <div id="user-info" style="display: none;">
+                            <p>Bienvenue, <span id="user-name"></span>!</p>
+                            <button id="logout-btn" class="btn-secondary">Se déconnecter</button>
+                        </div>
+                        <div id="login-form">
+                            <div data-netlify-identity-menu></div>
+                            <button id="login-btn" class="btn-primary">Se connecter / S'inscrire</button>
+                        </div>
+                    </div>
+                    
+                    <div class="login-help">
+                        <p>Pas encore abonné ? <a href="contact.html"><i class="fas fa-envelope icon"></i> Contactez-nous</a></p>
+                    </div>
+                </div>
+                
+                <div class="intranet-info">
+                    <h3><i class="fas fa-info-circle icon"></i> Que trouve-t-on dans l'intranet ?</h3>
+                    <ul>
+                        <li><i class="fas fa-file-alt icon"></i> Accès aux supports de formation</li>
+                        <li><i class="fas fa-folder-open icon"></i> Documents et ressources exclusives</li>
+                        <li><i class="fas fa-tools icon"></i> Outils pratiques et modèles</li>
+                        <li><i class="fas fa-video icon"></i> Webinaires et contenus vidéo</li>
+                        <li><i class="fas fa-balance-scale icon"></i> Veille réglementaire actualisée</li>
+                        <li><i class="fas fa-users icon"></i> Forum d'échange entre professionnels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenu protégé de l'intranet -->
+    <section id="intranet-content" class="section bg-light" style="display: none;">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-lock-open icon"></i> Espace membre</h2>
+            <div class="intranet-grid">
+                <div class="intranet-item">
+                    <h3><i class="fas fa-graduation-cap icon"></i> Formations</h3>
+                    <p>Accédez à vos formations et supports pédagogiques</p>
+                    <a href="#" class="btn-primary">Accéder</a>
+                </div>
+                <div class="intranet-item">
+                    <h3><i class="fas fa-file-download icon"></i> Documents</h3>
+                    <p>Téléchargez vos ressources et modèles</p>
+                    <a href="#" class="btn-primary">Accéder</a>
+                </div>
+                <div class="intranet-item">
+                    <h3><i class="fas fa-video icon"></i> Webinaires</h3>
+                    <p>Visionnez les enregistrements de nos webinaires</p>
+                    <a href="#" class="btn-primary">Accéder</a>
+                </div>
+                <div class="intranet-item">
+                    <h3><i class="fas fa-comments icon"></i> Forum</h3>
+                    <p>Échangez avec la communauté</p>
+                    <a href="#" class="btn-primary">Accéder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-award icon"></i> Avantages de l'abonnement</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3><i class="fas fa-infinity icon"></i> Accès illimité</h3>
+                    <p>Consultez tous nos contenus et ressources 24h/24, 7j/7</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-sync-alt icon"></i> Mises à jour régulières</h3>
+                    <p>Bénéficiez des dernières évolutions réglementaires et bonnes pratiques</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-headset icon"></i> Support personnalisé</h3>
+                    <p>Posez vos questions directement à nos experts</p>
+                </div>
+                <div class="benefit-item">
+                    <h3><i class="fas fa-users-cog icon"></i> Communauté</h3>
+                    <p>Échangez avec d'autres professionnels du secteur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/LOGOCOMPLETRISOMES.png" alt="RISOMES Logo Complet" class="footer-logo-full">
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Accueil</a>
+                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="nos-solutions.html">Nos solutions</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#" onclick="openCGVModal()">CGV</a>
+                    <a href="#" onclick="openDataModal()">Données personnelles</a>
+                </div>
+                <div class="footer-contact">
+                    <p>contact@risomes.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RISOMES. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Configuration Netlify Identity pour l'intranet
+        if (window.netlifyIdentity) {
+            // Initialisation
+            window.netlifyIdentity.on("init", user => {
+                updateUI(user);
+            });
+
+            // Événements de connexion/déconnexion
+            window.netlifyIdentity.on("login", user => {
+                updateUI(user);
+                window.netlifyIdentity.close();
+            });
+
+            window.netlifyIdentity.on("logout", () => {
+                updateUI(null);
+            });
+
+            // Gestion des boutons
+            document.getElementById("login-btn").addEventListener("click", () => {
+                window.netlifyIdentity.open();
+            });
+
+            document.getElementById("logout-btn").addEventListener("click", () => {
+                window.netlifyIdentity.logout();
+            });
+
+            // Fonction pour mettre à jour l'interface utilisateur
+            function updateUI(user) {
+                const userInfo = document.getElementById("user-info");
+                const loginForm = document.getElementById("login-form");
+                const intranetContent = document.getElementById("intranet-content");
+                const userName = document.getElementById("user-name");
+
+                if (user) {
+                    // Utilisateur connecté
+                    userInfo.style.display = "block";
+                    loginForm.style.display = "none";
+                    intranetContent.style.display = "block";
+                    userName.textContent = user.user_metadata?.full_name || user.email;
+                } else {
+                    // Utilisateur non connecté
+                    userInfo.style.display = "none";
+                    loginForm.style.display = "block";
+                    intranetContent.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
