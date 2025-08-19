@@ -330,6 +330,26 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    
+    <!-- Script pour gérer les invitations Netlify Identity -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Vérifier s'il y a un token d'invitation dans l'URL
+            const urlParams = new URLSearchParams(window.location.hash.substring(1));
+            const inviteToken = urlParams.get('invite_token');
+            
+            if (inviteToken) {
+                // Si un token d'invitation est détecté, rediriger vers la page intranet
+                console.log('Token d\'invitation détecté, redirection vers l\'intranet...');
+                
+                // Construire l'URL de redirection vers la page intranet avec le token
+                const redirectUrl = `${window.location.origin}/intranet.html#invite_token=${inviteToken}`;
+                
+                // Rediriger immédiatement
+                window.location.href = redirectUrl;
+            }
+        });
+    </script>
 </body>
 </html>
 

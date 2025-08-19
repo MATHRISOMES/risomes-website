@@ -170,12 +170,31 @@
             // Initialisation
             window.netlifyIdentity.on("init", user => {
                 updateUI(user);
+                
+                // Vérifier s'il y a un token d'invitation dans l'URL
+                const urlParams = new URLSearchParams(window.location.hash.substring(1));
+                const inviteToken = urlParams.get('invite_token');
+                
+                if (inviteToken && !user) {
+                    // Si un token d'invitation est présent et l'utilisateur n'est pas connecté
+                    console.log('Token d\'invitation détecté, ouverture du widget d\'inscription...');
+                    
+                    // Ouvrir automatiquement le widget d'inscription
+                    setTimeout(() => {
+                        window.netlifyIdentity.open('signup');
+                    }, 500); // Petit délai pour s'assurer que tout est chargé
+                }
             });
 
             // Événements de connexion/déconnexion
             window.netlifyIdentity.on("login", user => {
                 updateUI(user);
                 window.netlifyIdentity.close();
+                
+                // Nettoyer l'URL après connexion réussie
+                if (window.location.hash.includes('invite_token')) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
             });
 
             window.netlifyIdentity.on("logout", () => {
