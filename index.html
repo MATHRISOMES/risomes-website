@@ -350,6 +350,19 @@
             }
         });
     </script>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity ) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          // Redirigez l'utilisateur vers la page intranet après une connexion réussie
+          document.location.href = "/intranet.html"; 
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
 
