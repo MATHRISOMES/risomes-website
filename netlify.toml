@@ -14,8 +14,6 @@
   to = "/index.html"
   status = 200
 
-[[redirects]]
-  # Gestion des erreurs 404 (supprimée pour laisser Netlify gérer les 404 par défaut ou via _redirects)
 
 # Headers de sécurité
 [[headers]]
