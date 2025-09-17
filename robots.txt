@@ -1,0 +1,10 @@
+# Indique que les règles s'appliquent à tous les robots d'exploration.
+User-agent: *
+
+# N'interdit l'accès à aucune page. C'est idéal pour un site vitrine
+# où tout le contenu est public et destiné à être indexé.
+Disallow:
+
+# Indique l'emplacement de votre plan de site (sitemap) pour aider
+# les robots à découvrir toutes vos pages importantes rapidement.
+Sitemap: https://risomes.fr/sitemap.xml
