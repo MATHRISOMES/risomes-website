@@ -8,3 +8,5 @@ Disallow:
 # Indique l'emplacement de votre plan de site (sitemap) pour aider
 # les robots à découvrir toutes vos pages importantes rapidement.
 Sitemap: https://risomes.fr/sitemap.xml
+
+
