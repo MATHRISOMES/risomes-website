@@ -257,120 +257,45 @@ function animateOnScroll() {
 // Initialiser les animations au chargement
 document.addEventListener("DOMContentLoaded", animateOnScroll);
 
+// Fonctions globales pour les modales du footer
+function openCGVModal() {
+    const cgvModal = document.getElementById("cgvModal");
+    if (cgvModal) {
+        cgvModal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+}
+
+function openDataModal() {
+    const dataModal = document.getElementById("dataModal");
+    if (dataModal) {
+        dataModal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+}
+
 // Smooth scroll pour les ancres
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll("a[href^=\"#\"]");
     
     links.forEach(link => {
         link.addEventListener("click", function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector(".header").offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-});
+            const hash = this.hash;
+            if (hash) {
+                e.preventDefault();
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    const headerOffset = 80; // Ajuster en fonction de la hauteur de votre header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-// Effet parallaxe léger sur le hero
-document.addEventListener("scroll", function() {
-    const hero = document.querySelector(".hero");
-    const heroPage = document.querySelector(".hero-page");
-    const scrolled = window.pageYOffset;
-    
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-    
-    if (heroPage) {
-        const rate = scrolled * -0.5;
-        heroPage.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Gestion du focus pour l\'accessibilité
-document.addEventListener("DOMContentLoaded", function() {
-    // Améliorer la navigation au clavier
-    const focusableElements = document.querySelectorAll(
-        "a, button, input, textarea, select, [tabindex]:not([tabindex=\"-1\"])"
-    );
-    
-    focusableElements.forEach(element => {
-        element.addEventListener("focus", function() {
-            this.style.outline = "2px solid var(--primary-color)";
-            this.style.outlineOffset = "2px";
-        });
-        
-        element.addEventListener("blur", function() {
-            this.style.outline = "none";
-        });
-    });
-});
-
-// Validation des formulaires en temps réel
-document.addEventListener("DOMContentLoaded", function() {
-    const emailInputs = document.querySelectorAll("input[type=\"email\"]");
-    
-    emailInputs.forEach(input => {
-        input.addEventListener("blur", function() {
-            const email = this.value;
-            const emailRegex = /^[^\]+\@[^\]+\.[^\]+$/;
-            
-            if (email && !emailRegex.test(email)) {
-                this.style.borderColor = "#e53e3e";
-                this.style.boxShadow = "0 0 0 1px #e53e3e";
-            } else {
-                this.style.borderColor = "#e2e8f0";
-                this.style.boxShadow = "none";
-            }
-        });
-    });
-});
-
-// Gestion des erreurs d\'images
-document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll("img");
-    
-    images.forEach(img => {
-        img.addEventListener("error", function() {
-            this.style.display = "none";
-            console.warn("Image non trouvée:", this.src);
-        });
-    });
-});
-
-// Performance : lazy loading pour les images
-document.addEventListener("DOMContentLoaded", function() {
-    if ("IntersectionObserver" in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute("data-src");
-                        observer.unobserve(img);
-                    }
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
                 }
-            });
+            }
         });
-
-        const lazyImages = document.querySelectorAll("img[data-src]");
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
+    });
 });
-
-
-
-
 
