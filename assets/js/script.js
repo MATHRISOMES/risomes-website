@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Gestion de la modal "Recevoir nos offres" (rendu global)
+    // Gestion de la modal "Recevoir nos offres" (page d'accueil)
     const openModalBtn = document.getElementById("openModalBtn");
     const offerModal = document.getElementById("offerModal");
     const closeModalSpan = offerModal ? offerModal.querySelector(".close") : null;
@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (openModalBtn && offerModal && closeModalSpan) {
         openModalBtn.addEventListener("click", function() {
             offerModal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Empêche le défilement du corps
+            document.body.style.overflow = "hidden";
         });
 
         closeModalSpan.addEventListener("click", function() {
             offerModal.style.display = "none";
-            document.body.style.overflow = "auto"; // Rétablit le défilement du corps
+            document.body.style.overflow = "auto";
         });
 
         window.addEventListener("click", function(event) {
@@ -83,263 +83,241 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-       // Gestion des modales de contact sur la page 'Nos solutions'
-    const openContactModalBtn1 = document.getElementById("openContactModalBtn1");
-    const contactModal1 = document.getElementById("contact-modal-1");
-    const closeModalSpan1 = contactModal1 ? contactModal1.querySelector(".close") : null;
+    // Gestion des modales CGV et Données personnelles
+    const cgvModal = document.getElementById("cgvModal");
+    const dataModal = document.getElementById("dataModal");
 
-    if (openContactModalBtn1 && contactModal1 && closeModalSpan1) {
+    // Fonction pour ouvrir les modales CGV et données personnelles
+    window.openCGVModal = function() {
+        if (cgvModal) {
+            cgvModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+    };
+
+    window.openDataModal = function() {
+        if (dataModal) {
+            dataModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+    };
+
+    // Gestion de la fermeture des modales CGV et données personnelles
+    if (cgvModal) {
+        const cgvCloseBtn = cgvModal.querySelector(".close");
+        if (cgvCloseBtn) {
+            cgvCloseBtn.addEventListener("click", function() {
+                cgvModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+        }
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == cgvModal) {
+                cgvModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+
+    if (dataModal) {
+        const dataCloseBtn = dataModal.querySelector(".close");
+        if (dataCloseBtn) {
+            dataCloseBtn.addEventListener("click", function() {
+                dataModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+        }
+        
+        window.addEventListener("click", function(event) {
+            if (event.target == dataModal) {
+                dataModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+
+    // Validation des formulaires en temps réel
+    const emailInputs = document.querySelectorAll("input[type=\"email\"]");
+    
+    emailInputs.forEach(input => {
+        input.addEventListener("blur", function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.style.borderColor = "#e53e3e";
+                this.style.boxShadow = "0 0 0 1px #e53e3e";
+            } else {
+                this.style.borderColor = "#e2e8f0";
+                this.style.boxShadow = "none";
+            }
+        });
+    });
+
+    // Gestion des erreurs d'images
+    const images = document.querySelectorAll("img");
+    
+    images.forEach(img => {
+        img.addEventListener("error", function() {
+            this.style.display = "none";
+            console.warn("Image non trouvée:", this.src);
+        });
+    });
+
+    // Performance : lazy loading pour les images
+    if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute("data-src");
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        });
+
+        const lazyImages = document.querySelectorAll("img[data-src]");
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+});
+
+
+    // Gestion des modales de contact pour la page nos-solutions
+    const contactModal1 = document.getElementById("contactModal1");
+    const contactModal2 = document.getElementById("contactModal2");
+    const contactModal3 = document.getElementById("contactModal3");
+    
+    const openContactModalBtn1 = document.getElementById("openContactModalBtn1");
+    const openContactModalBtn2 = document.getElementById("openContactModalBtn2");
+    const openContactModalBtn3 = document.getElementById("openContactModalBtn3");
+
+    // Fonction pour ouvrir les modales de contact
+    if (openContactModalBtn1 && contactModal1) {
         openContactModalBtn1.addEventListener("click", function() {
             contactModal1.style.display = "block";
             document.body.style.overflow = "hidden";
         });
-
-        closeModalSpan1.addEventListener("click", function() {
-            contactModal1.style.display = "none";
-            document.body.style.overflow = "auto";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == contactModal1) {
-                contactModal1.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        });
-
-        const contactForm1 = contactModal1.querySelector("form");
-        if (contactForm1) {
-            contactForm1.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const email = document.getElementById("email1").value;
-                const subject = document.getElementById("subject1").value;
-                const message = document.getElementById("message1").value;
-
-                const mailSubject = encodeURIComponent(subject);
-                const mailBody = encodeURIComponent(`De: ${email}\nObjet: ${subject}\nMessage: ${message}`);
-                window.location.href = `mailto:risomes@outlook.fr?subject=${mailSubject}&body=${mailBody}`;
-                contactModal1.style.display = "none";
-                document.body.style.overflow = "auto";
-                contactForm1.reset();
-            });
-        }
     }
 
-    const openContactModalBtn2 = document.getElementById("openContactModalBtn2");
-    const contactModal2 = document.getElementById("contact-modal-2");
-    const closeModalSpan2 = contactModal2 ? contactModal2.querySelector(".close") : null;
-
-    if (openContactModalBtn2 && contactModal2 && closeModalSpan2) {
+    if (openContactModalBtn2 && contactModal2) {
         openContactModalBtn2.addEventListener("click", function() {
             contactModal2.style.display = "block";
             document.body.style.overflow = "hidden";
         });
-
-        closeModalSpan2.addEventListener("click", function() {
-            contactModal2.style.display = "none";
-            document.body.style.overflow = "auto";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == contactModal2) {
-                contactModal2.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        });
-
-        const contactForm2 = contactModal2.querySelector("form");
-        if (contactForm2) {
-            contactForm2.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const email = document.getElementById("email2").value;
-                const subject = document.getElementById("subject2").value;
-                const message = document.getElementById("message2").value;
-
-                const mailSubject = encodeURIComponent(subject);
-                const mailBody = encodeURIComponent(`De: ${email}\nObjet: ${subject}\nMessage: ${message}`);
-                window.location.href = `mailto:risomes@outlook.fr?subject=${mailSubject}&body=${mailBody}`;
-                contactModal2.style.display = "none";
-                document.body.style.overflow = "auto";
-                contactForm2.reset();
-            });
-        }
     }
 
-    const openContactModalBtn3 = document.getElementById("openContactModalBtn3");
-    const contactModal3 = document.getElementById("contact-modal-3");
-    const closeModalSpan3 = contactModal3 ? contactModal3.querySelector(".close") : null;
-
-    if (openContactModalBtn3 && contactModal3 && closeModalSpan3) {
+    if (openContactModalBtn3 && contactModal3) {
         openContactModalBtn3.addEventListener("click", function() {
             contactModal3.style.display = "block";
             document.body.style.overflow = "hidden";
         });
+    }
 
-        closeModalSpan3.addEventListener("click", function() {
-            contactModal3.style.display = "none";
-            document.body.style.overflow = "auto";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == contactModal3) {
-                contactModal3.style.display = "none";
-                document.body.style.overflow = "auto";
+    // Fonction pour fermer les modales de contact
+    function setupContactModalClose(modal) {
+        if (modal) {
+            const closeBtn = modal.querySelector(".close");
+            if (closeBtn) {
+                closeBtn.addEventListener("click", function() {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                });
             }
-        });
-
-        const contactForm3 = contactModal3.querySelector("form");
-        if (contactForm3) {
-            contactForm3.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const email = document.getElementById("email3").value;
-                const subject = document.getElementById("subject3").value;
-                const message = document.getElementById("message3").value;
-
-                const mailSubject = encodeURIComponent(subject);
-                const mailBody = encodeURIComponent(`De: ${email}\nObjet: ${subject}\nMessage: ${message}`);
-                window.location.href = `mailto:risomes@outlook.fr?subject=${mailSubject}&body=${mailBody}`;
-                contactModal3.style.display = "none";
-                document.body.style.overflow = "auto";
-                contactForm3.reset();
+            
+            window.addEventListener("click", function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
             });
         }
     }
 
-    // Gestion du bouton téléphone sur la page contact
-    const showPhoneBtn = document.getElementById("showPhoneBtn");
-    const phoneNumber = document.getElementById("phoneNumber");
+    setupContactModalClose(contactModal1);
+    setupContactModalClose(contactModal2);
+    setupContactModalClose(contactModal3);
 
-    if (showPhoneBtn && phoneNumber) {
-        showPhoneBtn.addEventListener("click", function() {
-            phoneNumber.style.display = "block";
-            showPhoneBtn.style.display = "none";
-        });
-    }
-
-    // Gestion du formulaire de devis sur la page contact
-    const devisForm = document.getElementById("devis-form");
-    if (devisForm) {
-        devisForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const solutions = document.getElementById("solutions").value;
-            const message = document.getElementById("message").value;
-
-            const subject = encodeURIComponent("Demande de devis");
-            const body = encodeURIComponent(`De: ${email}\nSolutions: ${solutions}\nMessage: ${message}`);
-            window.location.href = `mailto:risomes@outlook.fr?subject=${subject}&body=${body}`;
-            devisForm.reset();
-        });
-    }
-});
-function animateOnScroll() {
-    const elements = document.querySelectorAll(".solution-card, .proposition-item, .team-member, .benefit-item");
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    elements.forEach(element => {
-        element.style.opacity = "0";
-        element.style.transform = "translateY(20px)";
-        element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-        observer.observe(element);
-    });
-}
-
-// Initialiser les animations au chargement
-document.addEventListener("DOMContentLoaded", animateOnScroll);
-
-// Fonctions globales pour les modales du footer
-function openCGVModal() {
-    const cgvModal = document.getElementById("cgvModal");
-    const closeModalSpanCGV = cgvModal ? cgvModal.querySelector(".close") : null;
-
-    if (cgvModal) {
-        cgvModal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-
-    if (closeModalSpanCGV) {
-        closeModalSpanCGV.onclick = function() {
-            cgvModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        };
-    }
-
-    window.onclick = function(event) {
-        if (event.target == cgvModal) {
-            cgvModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    };
-}
-    const cgvModal = document.getElementById("cgvModal");
-    if (cgvModal) {
-        cgvModal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-}
-
-function openDataModal() {
-    const dataModal = document.getElementById("dataModal");
-    const closeModalSpanData = dataModal ? dataModal.querySelector(".close") : null;
-
-    if (dataModal) {
-        dataModal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-
-    if (closeModalSpanData) {
-        closeModalSpanData.onclick = function() {
-            dataModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        };
-    }
-
-    window.onclick = function(event) {
-        if (event.target == dataModal) {
-            dataModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    };
-}
-    const dataModal = document.getElementById("dataModal");
-    if (dataModal) {
-        dataModal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-}
-
-// Smooth scroll pour les ancres
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("a[href^=\"#\"]");
-    
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            const hash = this.hash;
-            if (hash) {
+    // Gestion des formulaires de contact
+    function setupContactForm(formId, modalId) {
+        const form = document.getElementById(formId);
+        const modal = document.getElementById(modalId);
+        
+        if (form && modal) {
+            form.addEventListener("submit", function(e) {
                 e.preventDefault();
-                const targetElement = document.querySelector(hash);
-                if (targetElement) {
-                    const headerOffset = 80; // Ajuster en fonction de la hauteur de votre header
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
+                
+                const formData = new FormData(form);
+                const data = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
                 }
-            }
-        });
-    });
-});
+                
+                // Gestion spéciale pour "autre" structure
+                let structureText = data.structure;
+                if (data.structure === "autre") {
+                    const autreStructure = prompt("Veuillez préciser votre structure:");
+                    if (autreStructure) {
+                        structureText = `Autre: ${autreStructure}`;
+                    }
+                }
+                
+                // Construction du sujet et du corps de l'email
+                let subject = "";
+                let body = `Nom: ${data.nom}\nPrénom: ${data.prenom}\nEmail: ${data.email}\nStructure: ${structureText}\n`;
+                
+                if (data.fonction) {
+                    body += `Fonction: ${data.fonction}\n`;
+                }
+                
+                if (formId === "contactForm1") {
+                    subject = "Demande d'information - Sensibilisations";
+                    if (data.sensibilisation) {
+                        body += `Sensibilisation: ${data.sensibilisation}\n`;
+                    }
+                } else if (formId === "contactForm2") {
+                    subject = "Demande de devis - Formations immersives";
+                    if (data.formation) {
+                        body += `Formation: ${data.formation}\n`;
+                    }
+                    if (data.participants) {
+                        body += `Nombre de participants: ${data.participants}\n`;
+                    }
+                    if (data.dates) {
+                        body += `Dates souhaitées: ${data.dates}\n`;
+                    }
+                } else if (formId === "contactForm3") {
+                    subject = "Demande d'information - Accompagnements";
+                    if (data.accompagnement) {
+                        body += `Type d'accompagnement: ${data.accompagnement}\n`;
+                    }
+                    if (data.contexte) {
+                        body += `Contexte: ${data.contexte}\n`;
+                    }
+                }
+                
+                if (data.message) {
+                    body += `\nMessage:\n${data.message}`;
+                }
+                
+                // Ouverture du client email
+                const encodedSubject = encodeURIComponent(subject);
+                const encodedBody = encodeURIComponent(body);
+                window.location.href = `mailto:risomes@outlook.fr?subject=${encodedSubject}&body=${encodedBody}`;
+                
+                // Fermeture de la modale et reset du formulaire
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+                form.reset();
+            });
+        }
+    }
+
+    setupContactForm("contactForm1", "contactModal1");
+    setupContactForm("contactForm2", "contactModal2");
+    setupContactForm("contactForm3", "contactModal3");
 
