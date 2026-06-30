@@ -98,7 +98,19 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title"><i class="fas fa-file-invoice icon"></i> Demander un devis</h2>
-            <form class="contact-form" id="devis-form">
+            <form
+                class="contact-form"
+                id="devis-form"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/merci.html"
+            >
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display:none;">
+                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="email"><i class="fas fa-at icon"></i> Votre adresse email *</label>
                     <input type="email" id="email" name="email" required>
@@ -240,7 +252,7 @@
                 <p>La collecte et le traitement de ces données répond à la finalité suivante : Suivi de la qualité du service et envoi des informations demandées.</p>
                 <h4>3. Responsable du traitement</h4>
                 <p>Les données à caractère personnel sont collectées par RISOMES.</p>
-                <p>Le responsable du traitement peut être contacté par mail : <a href="mailto:risomes@outlook.fr">risomes@outlook.fr</a></p>
+                <p>Le responsable du traitement peut être contacté par mail : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
                 <h4>4. Vos droits</h4>
                 <p>Conformément au RGPD, vous disposez des droits suivants :</p>
                 <ul>
@@ -252,7 +264,7 @@
                     <li>Droit de saisir l'autorité de contrôle compétente</li>
                 </ul>
                 <h4>5. Exercer vos droits</h4>
-                <p>Pour exercer vos droits, veuillez adresser votre demande par mail à <a href="mailto:risomes@outlook.fr">risomes@outlook.fr</a></p>
+                <p>Pour exercer vos droits, veuillez adresser votre demande par mail à <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
                 <p>Consultez le site <a href="https://www.cnil.fr" target="_blank">cnil.fr</a> pour plus d'informations sur vos droits.</p>
                 <h4>6. Hébergement</h4>
                 <p>Le site RISOMES est hébergé par NETLIFY.</p>
@@ -265,28 +277,3 @@
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-    <div id="cgvModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Conditions Générales de Vente (CGV)</h3>
-            <div class="modal-text-content">
-                <!-- CGV content will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <div id="dataModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Politique de confidentialité</h3>
-            <div class="modal-text-content">
-                <!-- Données personnelles content will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-
