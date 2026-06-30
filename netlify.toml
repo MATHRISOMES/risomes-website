@@ -1,57 +1,35 @@
-# Configuration Netlify pour RISOMES
+# ============================================================
+# Configuration Netlify - RISOMES
+# Sécurité + redirections + headers
+# ============================================================
 
-[build]
-  # Dossier de publication (racine du site)
-  publish = "."
-  
-  # Commande de build (aucune nécessaire pour un site statique)
-  command = ""
-
-# Redirections et règles de réécriture
-[[redirects]]
-  # Redirection de la racine vers index.html
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-
-# Headers de sécurité
+# --- Headers de sécurité appliqués à tout le site ---
 [[headers]]
   for = "/*"
   [headers.values]
-    # Sécurité HTTPS
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    
-    # Protection contre le clickjacking
-    X-Frame-Options = "DENY"
-    
-    # Protection XSS
-    X-XSS-Protection = "1; mode=block"
-    
-    # Type de contenu
+    # Empêche le site d'être affiché dans une <iframe> sur un autre domaine (anti-clickjacking)
+    X-Frame-Options = "SAMEORIGIN"
+    # Empêche le navigateur de "deviner" le type de fichier (anti-injection de scripts)
     X-Content-Type-Options = "nosniff"
-    
-    # Politique de référent
+    # Active la protection XSS des anciens navigateurs
+    X-XSS-Protection = "1; mode=block"
+    # Limite les informations envoyées aux sites externes lors d'un clic sortant
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # Désactive l'accès caméra/micro/géoloc par défaut (le site n'en a pas besoin)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Force HTTPS pendant 1 an (une fois bien testé en HTTPS)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
-# Cache des assets statiques
+# --- Page intranet : non indexable + anti-cache agressif pour éviter
+#     qu'une page mise en cache reste visible après déconnexion ---
 [[headers]]
-  for = "/assets/*"
+  for = "/intranet.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
-# Configuration des formulaires Netlify
-[build.environment]
-  # Variables d'environnement si nécessaire
-  NODE_VERSION = "18"
-
-# Paramètres de déploiement
-[context.production]
-  command = ""
-  
-[context.deploy-preview]
-  command = ""
-
-[context.branch-deploy]
-  command = ""
-
+# --- Redirection 404 propre ---
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

@@ -75,13 +75,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const subject = encodeURIComponent("Nouvelle demande d'offre");
                 const body = encodeURIComponent(`Structure: ${structureText}\nFonction: ${fonction}\nEmail: ${email}`);
-                window.location.href = `mailto:risomes@outlook.fr?subject=${subject}&body=${body}`;
+                window.location.href = `mailto:contact@risomes.fr?subject=${subject}&body=${body}`;
                 offerModal.style.display = "none";
                 document.body.style.overflow = "auto";
                 offerForm.reset();
             });
         }
     }
+
+    // ============================================================
+    // NOTE — Formulaire "Demander un devis" (id="devis-form",
+    // page contact.html) :
+    // Aucun gestionnaire JS n'est nécessaire ici. Ce formulaire est
+    // géré nativement par Netlify Forms via les attributs
+    // data-netlify="true" et name="contact" ajoutés directement
+    // dans contact.html. Le bloc JavaScript qui interceptait
+    // auparavant la soumission (e.preventDefault() + mailto:) a été
+    // supprimé : c'est précisément ce qui empêchait l'envoi.
+    // ============================================================
 
     // Gestion des modales CGV et Données personnelles
     const cgvModal = document.getElementById("cgvModal");
@@ -307,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Ouverture du client email
                 const encodedSubject = encodeURIComponent(subject);
                 const encodedBody = encodeURIComponent(body);
-                window.location.href = `mailto:risomes@outlook.fr?subject=${encodedSubject}&body=${encodedBody}`;
+                window.location.href = `mailto:contact@risomes.fr?subject=${encodedSubject}&body=${encodedBody}`;
                 
                 // Fermeture de la modale et reset du formulaire
                 modal.style.display = "none";
@@ -320,4 +331,3 @@ document.addEventListener("DOMContentLoaded", function() {
     setupContactForm("contactForm1", "contactModal1");
     setupContactForm("contactForm2", "contactModal2");
     setupContactForm("contactForm3", "contactModal3");
-
