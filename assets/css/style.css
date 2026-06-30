@@ -199,9 +199,10 @@ body {
     margin: 0 auto;
 }
 
-/* Welcome Section */.welcome-section {
+/* Welcome Section */
+.welcome-section {
     padding: 40px 0;
-}    text-align: center;
+    text-align: center;
 }
 
 .welcome-description {
