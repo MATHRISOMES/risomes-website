@@ -325,29 +325,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.body.style.overflow = "auto";
                 form.reset();
                 
-    // ============================================================
-    // CARROUSEL TEMOIGNAGES RISOMES
-    // ============================================================
-
-    let index = 0;
-    const slides = document.querySelectorAll('.risomes-slide');
-    const dots = document.querySelectorAll('.risomes-dot');
-
-    function showSlide(i) {
-        slides.forEach(s => s.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-
-        slides[i].classList.add('active');
-        dots[i].classList.add('active');
-    }
-
-    function nextSlide() {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-    }
-
-    setInterval(nextSlide, 5000);
-    showSlide(index);          
             });
         }
     }
