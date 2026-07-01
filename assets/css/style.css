@@ -515,7 +515,7 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Intranet */
+/* Intranet  */
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
