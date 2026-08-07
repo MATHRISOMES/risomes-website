@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="canonical" href="https://risomes.fr/nos-solutions">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
@@ -21,16 +22,16 @@
     <header class="header">
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.html">
+                <a href="/">
                     <img src="assets/images/Fichier16@2x.png" alt="RISOMES Logo" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a></li>
-                <li><a href="nos-solutions.html" class="nav-link active">Nos solutions</a></li>
-                <li><a href="notre-approche.html" class="nav-link">Notre approche</a></li>
-                <li><a href="contact.html" class="nav-link">Nous contacter</a></li>
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
+                <li><a href="/nos-solutions" class="nav-link active">Nos solutions</a></li>
+                <li><a href="/notre-approche" class="nav-link">Notre approche</a></li>
+                <li><a href="/contact" class="nav-link">Nous contacter</a></li>
                 <li><a href="intranet.html" class="nav-link">Intranet</a></li>
             </ul>
             <div class="hamburger">
@@ -317,10 +318,10 @@
                     <img src="assets/images/LOGOCOMPLETRISOMES.png" alt="RISOMES Logo Complet" class="footer-logo-full">
                 </div>
                 <div class="footer-links">
-                    <a href="index.html">Accueil</a>
-                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-                    <a href="nos-solutions.html">Nos solutions</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="/">Accueil</a>
+                    <a href="/qui-sommes-nous">Qui sommes-nous ?</a>
+                    <a href="/nos-solutions">Nos solutions</a>
+                    <a href="/contact">Contact</a>
                     <a href="#" onclick="openCGVModal()">CGV</a>
                     <a href="#" onclick="openDataModal()">Données personnelles</a>
                 </div>
@@ -334,75 +335,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Modal Contact 1 -->
-    <div id="contact-modal-1" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour toutes questions ou demande de devis</h3>
-            <form id="contact-form-1">
-                <div class="form-group">
-                    <label for="email1">Votre adresse email *</label>
-                    <input type="email" id="email1" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject1">Objet *</label>
-                    <input type="text" id="subject1" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message1">Votre message *</label>
-                    <textarea id="message1" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Contact 2 -->
-    <div id="contact-modal-2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour organiser une intervention et demander un devis</h3>
-            <form id="contact-form-2">
-                <div class="form-group">
-                    <label for="email2">Votre adresse email *</label>
-                    <input type="email" id="email2" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject2">Objet *</label>
-                    <input type="text" id="subject2" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message2">Votre message *</label>
-                    <textarea id="message2" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Contact 3 -->
-    <div id="contact-modal-3" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</h3>
-            <form id="contact-form-3">
-                <div class="form-group">
-                    <label for="email3">Votre adresse email *</label>
-                    <input type="email" id="email3" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject3">Objet *</label>
-                    <input type="text" id="subject3" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message3">Votre message *</label>
-                    <textarea id="message3" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Modal CGV -->
     <div id="cgvModal" class="modal">
@@ -448,75 +380,6 @@
                 <h4>8. Droit applicable et juridiction</h4>
                 <p>Les présentes CGV sont soumises au droit français. En cas de litige, compétence exclusive est attribuée au tribunal compétent du ressort du siège social de RISOMES.</p>
             </div>
-        </div>
-    </div>
-
-    <!-- Modal de contact 1 -->
-    <div id="contact-modal-1" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour toutes questions ou demande de devis</h3>
-            <form>
-                <div class="form-group">
-                    <label for="email1">Votre email :</label>
-                    <input type="email" id="email1" name="email1" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject1">Sujet :</label>
-                    <input type="text" id="subject1" name="subject1" value="Demande de devis - Sensibilisations" required>
-                </div>
-                <div class="form-group">
-                    <label for="message1">Votre message :</label>
-                    <textarea id="message1" name="message1" rows="5" placeholder="Décrivez votre demande..." required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal de contact 2 -->
-    <div id="contact-modal-2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour organiser une intervention et demander un devis</h3>
-            <form>
-                <div class="form-group">
-                    <label for="email2">Votre email :</label>
-                    <input type="email" id="email2" name="email2" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject2">Sujet :</label>
-                    <input type="text" id="subject2" name="subject2" value="Demande de devis - Formations immersives" required>
-                </div>
-                <div class="form-group">
-                    <label for="message2">Votre message :</label>
-                    <textarea id="message2" name="message2" rows="5" placeholder="Décrivez votre demande..." required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal de contact 3 -->
-    <div id="contact-modal-3" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</h3>
-            <form>
-                <div class="form-group">
-                    <label for="email3">Votre email :</label>
-                    <input type="email" id="email3" name="email3" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject3">Sujet :</label>
-                    <input type="text" id="subject3" name="subject3" value="Demande de devis - Accompagnements" required>
-                </div>
-                <div class="form-group">
-                    <label for="message3">Votre message :</label>
-                    <textarea id="message3" name="message3" rows="5" placeholder="Décrivez votre demande..." required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-            </form>
         </div>
     </div>
 
@@ -638,7 +501,18 @@
             <span class="close">&times;</span>
             <h3>Contactez-nous pour toutes questions ou demande de devis</h3>
             <p class="modal-subtitle">Sensibilisations</p>
-            <form id="contactForm1">
+            <form
+                id="contactForm1"
+                name="devis-sensibilisations"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/merci.html"
+            >
+                <input type="hidden" name="form-name" value="devis-sensibilisations" />
+                <p style="display:none;">
+                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="nom1">Nom *</label>
                     <input type="text" id="nom1" name="nom" required>
@@ -694,7 +568,18 @@
             <span class="close">&times;</span>
             <h3>Contactez-nous pour organiser une intervention et demander un devis</h3>
             <p class="modal-subtitle">Formations immersives</p>
-            <form id="contactForm2">
+            <form
+                id="contactForm2"
+                name="devis-formations-immersives"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/merci.html"
+            >
+                <input type="hidden" name="form-name" value="devis-formations-immersives" />
+                <p style="display:none;">
+                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="nom2">Nom *</label>
                     <input type="text" id="nom2" name="nom" required>
@@ -759,7 +644,18 @@
             <span class="close">&times;</span>
             <h3>Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</h3>
             <p class="modal-subtitle">Accompagnements</p>
-            <form id="contactForm3">
+            <form
+                id="contactForm3"
+                name="devis-accompagnements"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/merci.html"
+            >
+                <input type="hidden" name="form-name" value="devis-accompagnements" />
+                <p style="display:none;">
+                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                </p>
                 <div class="form-group">
                     <label for="nom3">Nom *</label>
                     <input type="text" id="nom3" name="nom" required>
