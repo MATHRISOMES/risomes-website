@@ -60,25 +60,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const offerForm = offerModal.querySelector("form");
         if (offerForm) {
-            offerForm.addEventListener("submit", function(e) {
-                e.preventDefault();
+            offerForm.addEventListener("submit", function() {
+                // Netlify Forms gère nativement la soumission (data-netlify="true").
+                // On laisse uniquement passer le cas "Autre" pour compléter le champ
+                // structure avant l'envoi réel — sans preventDefault().
                 const structure = document.getElementById("structure").value;
-                let structureText = structure;
                 if (structure === "autre") {
                     const autreStructure = prompt("Veuillez préciser votre structure:");
                     if (autreStructure) {
-                        structureText = `Autre: ${autreStructure}`;
+                        document.getElementById("structure").value = `Autre: ${autreStructure}`;
                     }
                 }
-                const fonction = document.getElementById("fonction").value;
-                const email = document.getElementById("email").value;
-
-                const subject = encodeURIComponent("Nouvelle demande d'offre");
-                const body = encodeURIComponent(`Structure: ${structureText}\nFonction: ${fonction}\nEmail: ${email}`);
-                window.location.href = `mailto:contact@risomes.fr?subject=${subject}&body=${body}`;
-                offerModal.style.display = "none";
-                document.body.style.overflow = "auto";
-                offerForm.reset();
             });
         }
     }
@@ -252,83 +244,26 @@ document.addEventListener("DOMContentLoaded", function() {
     setupContactModalClose(contactModal2);
     setupContactModalClose(contactModal3);
 
-    // Gestion des formulaires de contact
-    function setupContactForm(formId, modalId) {
+    // Gestion des formulaires de contact — Netlify Forms gère nativement la
+    // soumission (data-netlify="true" ajouté directement dans le HTML).
+    // On conserve uniquement la logique "Autre" pour compléter le champ
+    // structure avant l'envoi réel, sans preventDefault().
+    function setupContactForm(formId) {
         const form = document.getElementById(formId);
-        const modal = document.getElementById(modalId);
-        
-        if (form && modal) {
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(form);
-                const data = {};
-                
-                for (let [key, value] of formData.entries()) {
-                    data[key] = value;
-                }
-                
-                // Gestion spéciale pour "autre" structure
-                let structureText = data.structure;
-                if (data.structure === "autre") {
+
+        if (form) {
+            form.addEventListener("submit", function() {
+                const structureField = form.querySelector('[name="structure"]');
+                if (structureField && structureField.value === "autre") {
                     const autreStructure = prompt("Veuillez préciser votre structure:");
                     if (autreStructure) {
-                        structureText = `Autre: ${autreStructure}`;
+                        structureField.value = `Autre: ${autreStructure}`;
                     }
                 }
-                
-                // Construction du sujet et du corps de l'email
-                let subject = "";
-                let body = `Nom: ${data.nom}\nPrénom: ${data.prenom}\nEmail: ${data.email}\nStructure: ${structureText}\n`;
-                
-                if (data.fonction) {
-                    body += `Fonction: ${data.fonction}\n`;
-                }
-                
-                if (formId === "contactForm1") {
-                    subject = "Demande d'information - Sensibilisations";
-                    if (data.sensibilisation) {
-                        body += `Sensibilisation: ${data.sensibilisation}\n`;
-                    }
-                } else if (formId === "contactForm2") {
-                    subject = "Demande de devis - Formations immersives";
-                    if (data.formation) {
-                        body += `Formation: ${data.formation}\n`;
-                    }
-                    if (data.participants) {
-                        body += `Nombre de participants: ${data.participants}\n`;
-                    }
-                    if (data.dates) {
-                        body += `Dates souhaitées: ${data.dates}\n`;
-                    }
-                } else if (formId === "contactForm3") {
-                    subject = "Demande d'information - Accompagnements";
-                    if (data.accompagnement) {
-                        body += `Type d'accompagnement: ${data.accompagnement}\n`;
-                    }
-                    if (data.contexte) {
-                        body += `Contexte: ${data.contexte}\n`;
-                    }
-                }
-                
-                if (data.message) {
-                    body += `\nMessage:\n${data.message}`;
-                }
-                
-                // Ouverture du client email
-                const encodedSubject = encodeURIComponent(subject);
-                const encodedBody = encodeURIComponent(body);
-                window.location.href = `mailto:contact@risomes.fr?subject=${encodedSubject}&body=${encodedBody}`;
-                
-                // Fermeture de la modale et reset du formulaire
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-                form.reset();
-                
             });
         }
     }
 
-    setupContactForm("contactForm1", "contactModal1");
-    setupContactForm("contactForm2", "contactModal2");
-    setupContactForm("contactForm3", "contactModal3");
+    setupContactForm("contactForm1");
+    setupContactForm("contactForm2");
+    setupContactForm("contactForm3");

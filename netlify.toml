@@ -28,6 +28,38 @@
     X-Robots-Tag = "noindex, nofollow"
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+# --- Canonicalisation des URLs : version propre (sans .html) ---
+# Ces règles doivent rester AVANT la règle catch-all ci-dessous.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/qui-sommes-nous.html"
+  to = "/qui-sommes-nous"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nos-solutions.html"
+  to = "/nos-solutions"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/notre-approche.html"
+  to = "/notre-approche"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
 # --- Redirection 404 propre ---
 [[redirects]]
   from = "/*"
