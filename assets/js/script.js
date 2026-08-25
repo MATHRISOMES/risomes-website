@@ -86,11 +86,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // supprimé : c'est précisément ce qui empêchait l'envoi.
     // ============================================================
 
-    // Gestion des modales CGV et Données personnelles
+    // Gestion des modales CGV, Données personnelles, Mentions légales et Règlement intérieur
     const cgvModal = document.getElementById("cgvModal");
     const dataModal = document.getElementById("dataModal");
+    const mentionsLegalesModal = document.getElementById("mentionsLegalesModal");
+    const reglementModal = document.getElementById("reglementModal");
 
-    // Fonction pour ouvrir les modales CGV et données personnelles
+    // Fonction pour ouvrir les modales
     window.openCGVModal = function() {
         if (cgvModal) {
             cgvModal.style.display = "block";
@@ -105,40 +107,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Gestion de la fermeture des modales CGV et données personnelles
-    if (cgvModal) {
-        const cgvCloseBtn = cgvModal.querySelector(".close");
-        if (cgvCloseBtn) {
-            cgvCloseBtn.addEventListener("click", function() {
-                cgvModal.style.display = "none";
-                document.body.style.overflow = "auto";
-            });
+    window.openMentionsLegalesModal = function() {
+        if (mentionsLegalesModal) {
+            mentionsLegalesModal.style.display = "block";
+            document.body.style.overflow = "hidden";
         }
-        
-        window.addEventListener("click", function(event) {
-            if (event.target == cgvModal) {
-                cgvModal.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        });
-    }
+    };
 
-    if (dataModal) {
-        const dataCloseBtn = dataModal.querySelector(".close");
-        if (dataCloseBtn) {
-            dataCloseBtn.addEventListener("click", function() {
-                dataModal.style.display = "none";
+    window.openReglementModal = function() {
+        if (reglementModal) {
+            reglementModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+    };
+
+    // Fermeture générique : chaque modale gère sa propre croix et son propre clic extérieur
+    [cgvModal, dataModal, mentionsLegalesModal, reglementModal].forEach(function(modal) {
+        if (!modal) return;
+        const closeBtn = modal.querySelector(".close");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
                 document.body.style.overflow = "auto";
             });
         }
-        
         window.addEventListener("click", function(event) {
-            if (event.target == dataModal) {
-                dataModal.style.display = "none";
+            if (event.target == modal) {
+                modal.style.display = "none";
                 document.body.style.overflow = "auto";
             }
         });
-    }
+    });
 
     // Validation des formulaires en temps réel
     const emailInputs = document.querySelectorAll("input[type=\"email\"]");

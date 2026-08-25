@@ -11,6 +11,7 @@
     --accent-color: #e76f51;
     --text-dark: #2d3748;
     --text-light: #718096;
+    --text-muted-accessible: #5a6b7b; /* contraste 5,5:1 sur blanc — conforme WCAG 1.4.3 (AA) */
     --bg-light: #f7fafc;
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1206,7 +1207,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-stat-label {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     margin-top: .4rem;
     line-height: 1.4;
     text-align: center;
@@ -1214,7 +1215,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-stats-sub {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     margin-top: 1rem;
     font-style: italic;
 }
@@ -1244,7 +1245,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 /* --- Carrousel témoignages --- */
 .risomes-temoignages-intro {
     text-align: center;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     font-style: italic;
     margin-top: -1.5rem;
     margin-bottom: 2rem;
@@ -1501,4 +1502,26 @@ Utilise les variables CSS existantes — aucune couleur en dur
         font-size: 0.8rem;
         padding: 0.3rem 0.7rem;
     }
+}
+
+/* ============================================================
+   Lien d'évitement (skip link) — WCAG 2.4.1
+   Invisible par défaut, apparaît uniquement au focus clavier
+   ============================================================ */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    z-index: 10000;
+    background: var(--primary-color, #385F6B);
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 6px 0;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
 }
