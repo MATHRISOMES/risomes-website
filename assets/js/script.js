@@ -86,11 +86,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // supprimé : c'est précisément ce qui empêchait l'envoi.
     // ============================================================
 
-    // Gestion des modales CGV et Données personnelles
+    // Gestion des modales CGV, Données personnelles, Mentions légales et Règlement intérieur
     const cgvModal = document.getElementById("cgvModal");
     const dataModal = document.getElementById("dataModal");
+    const mentionsLegalesModal = document.getElementById("mentionsLegalesModal");
 
-    // Fonction pour ouvrir les modales CGV et données personnelles
+    // Fonction pour ouvrir les modales
     window.openCGVModal = function() {
         if (cgvModal) {
             cgvModal.style.display = "block";
@@ -105,40 +106,30 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Gestion de la fermeture des modales CGV et données personnelles
-    if (cgvModal) {
-        const cgvCloseBtn = cgvModal.querySelector(".close");
-        if (cgvCloseBtn) {
-            cgvCloseBtn.addEventListener("click", function() {
-                cgvModal.style.display = "none";
-                document.body.style.overflow = "auto";
-            });
+    window.openMentionsLegalesModal = function() {
+        if (mentionsLegalesModal) {
+            mentionsLegalesModal.style.display = "block";
+            document.body.style.overflow = "hidden";
         }
-        
-        window.addEventListener("click", function(event) {
-            if (event.target == cgvModal) {
-                cgvModal.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        });
-    }
+    };
 
-    if (dataModal) {
-        const dataCloseBtn = dataModal.querySelector(".close");
-        if (dataCloseBtn) {
-            dataCloseBtn.addEventListener("click", function() {
-                dataModal.style.display = "none";
+    // Fermeture générique : chaque modale gère sa propre croix et son propre clic extérieur
+    [cgvModal, dataModal, mentionsLegalesModal].forEach(function(modal) {
+        if (!modal) return;
+        const closeBtn = modal.querySelector(".close");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
                 document.body.style.overflow = "auto";
             });
         }
-        
         window.addEventListener("click", function(event) {
-            if (event.target == dataModal) {
-                dataModal.style.display = "none";
+            if (event.target == modal) {
+                modal.style.display = "none";
                 document.body.style.overflow = "auto";
             }
         });
-    }
+    });
 
     // Validation des formulaires en temps réel
     const emailInputs = document.querySelectorAll("input[type=\"email\"]");
@@ -220,6 +211,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Modale de prise de rendez-vous (encart "besoins spécifiques")
+    const rdvModal = document.getElementById("rdvModal");
+    const openRdvModalBtn = document.getElementById("openRdvModalBtn");
+    if (openRdvModalBtn && rdvModal) {
+        openRdvModalBtn.addEventListener("click", function() {
+            rdvModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements"
+    window.toggleSolutionSection = function(sectionId, btn) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        const isOpen = section.style.display !== "none";
+        section.style.display = isOpen ? "none" : "block";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        btn.classList.toggle("active", !isOpen);
+        if (!isOpen) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     // Fonction pour fermer les modales de contact
     function setupContactModalClose(modal) {
         if (modal) {
@@ -243,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setupContactModalClose(contactModal1);
     setupContactModalClose(contactModal2);
     setupContactModalClose(contactModal3);
+    setupContactModalClose(rdvModal);
 
     // Gestion des formulaires de contact — Netlify Forms gère nativement la
     // soumission (data-netlify="true" ajouté directement dans le HTML).

@@ -14,10 +14,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://risomes.fr/qui-sommes-nous">
     <meta property="og:title" content="RISOMES - Qui sommes-nous ?">
+    <meta name="description" content="Découvrez l'équipe RISOMES, deux professionnelles expérimentées du secteur social et médico-social dédiées à la qualité du service public.">
     <meta property="og:description" content="Découvrez l'équipe RISOMES, deux professionnelles expérimentées du secteur social et médico-social dédiées à la qualité du service public.">
     <meta property="og:image" content="https://risomes.fr/assets/images/LOGOCOMPLETRISOMES.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
@@ -43,14 +45,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero page-hero">
+    <section class="hero page-hero" id="main-content">
             <div class="hero-quote">
                 <p><em>« <img src="assets/images/Fichier15@2x.png" alt="Rhizome" class="inline-favicon"> Comme le rhizome,</em></p>
                 <p><em>nous sommes une réserve d'énergie et de compétences</em></p>
                 <p><em>qui vous aide à essaimer les bonnes pratiques</em></p>
                 <p><em>pour un meilleur service public. »</em></p>
             </div>
-        </div>
     </section>
 
     <!-- Origine Section -->
@@ -79,7 +80,8 @@
                     <h3>Mathilde THERY</h3>
                     <p><strong>Formation :</strong> Formée en politiques publiques et changement social à Sciences Po Grenoble (et diplômée en Sciences Politiques), certifiée en inspection des ESSMS, audit et maîtrise des risques.</p>
                     <p><strong>Expérience :</strong> Plus de 7 ans d'expérience dans la protection de l'enfance, la justice des mineurs, le handicap, les personnes vulnérables et de la gestion des risques.</p>
-                    <p><strong>Parcours :</strong> Consultante-formatrice, chargée de mission accompagnement des méthodologies de contrôles, responsable pilotage territorial, inspectrice des ESSMS, intervenante en politique sociale. Expérience terrain : coordinatrice de projets, maraude pour le SAMU social, formatrice en transition écologique.</p>
+                    <p><strong>Parcours :</strong> Forte de 8 années d'expérience dans le secteur social et médico-social, Mathilde est consultante-formatrice, chargée de mission accompagnement des méthodologies de contrôles, responsable pilotage territorial, inspectrice des ESSMS, intervenante en politique sociale. Expérience terrain : coordinatrice de projets, maraude pour le SAMU social, formatrice en transition écologique.</p>
+                    <p><strong>Référente handicap RISOMES :</strong> Mathilde Théry est référente handicap au sein de RISOMES. À ce titre, elle vérifie en amont de chaque intervention les conditions de mise en œuvre possibles des formations au sein des établissements et des collectivités, afin d'en garantir l'accessibilité aux personnes en situation de handicap.</p>
                 </div>
             </div>
         </div>
@@ -159,6 +161,7 @@
                     <a href="/qui-sommes-nous">Qui sommes-nous ?</a>
                     <a href="/nos-solutions">Nos solutions</a>
                     <a href="/contact">Contact</a>
+                    <a href="#" onclick="openMentionsLegalesModal()">Mentions légales</a>
                     <a href="#" onclick="openCGVModal()">CGV</a>
                     <a href="#" onclick="openDataModal()">Données personnelles</a>
                 </div>
@@ -186,7 +189,7 @@
             >
                 <input type="hidden" name="form-name" value="offres-qui-sommes-nous" />
                 <p style="display:none;">
-                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                    <label for="bot-field-qui-sommes-nous">Ne pas remplir si vous êtes humain :</label><input id="bot-field-qui-sommes-nous" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
                     <label for="structure">Ma structure :</label>
@@ -219,7 +222,7 @@
             <h3>Conditions Générales de Vente (CGV)</h3>
             <div class="modal-body">
                 <h4>Société</h4>
-                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le Médico-Social</strong><br>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
                 Forme juridique : Société par Actions Simplifiée (SAS)<br>
                 Capital social : 5 000 €<br>
                 Siège social : 38500 COUBLEVIE<br>
@@ -255,11 +258,51 @@
                 <p>RISOMES est tenue à une obligation de moyens. Elle ne saurait être tenue responsable des décisions ou actions du client fondées sur ses recommandations. En tout état de cause, sa responsabilité est limitée au montant total facturé pour la mission concernée.</p>
                 <h4>8. Droit applicable et juridiction</h4>
                 <p>Les présentes CGV sont soumises au droit français. En cas de litige, compétence exclusive est attribuée au tribunal compétent du ressort du siège social de RISOMES.</p>
+                <h4>9. Modalités matérielles d'intervention</h4>
+                <p><strong>Locaux mis à disposition</strong><br>
+                Sauf disposition contraire prévue au devis, l'établissement ou la collectivité commanditaire met à disposition de RISOMES une salle adaptée à la prestation, dont la capacité d'accueil est précisée conjointement avant l'intervention en fonction du nombre de participants prévu.</p>
+                <p><strong>Accessibilité des locaux</strong><br>
+                L'accessibilité de la salle aux personnes en situation de handicap est vérifiée en amont au moyen de la check-list dédiée, sous la responsabilité de Mathilde Théry, référente handicap de RISOMES. Cette vérification conditionne, le cas échéant, l'adaptation des modalités pédagogiques prévues.</p>
+                <p><strong>Équipement pédagogique</strong><br>
+                L'établissement met à disposition un tableau blanc ou paperboard ainsi qu'un écran de projection. À défaut, RISOMES peut fournir son propre matériel de projection sur demande formulée avant l'intervention.</p>
             </div>
         </div>
     </div>
 
     <!-- Modal Données personnelles -->
+    <!-- Modal Mentions légales -->
+    
+    <!-- Modal Règlement intérieur -->
+        <!-- Modal Règlement intérieur -->
+    
+
+<div id="mentionsLegalesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mentions légales</h3>
+            <h4>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</h4>
+            <p><strong>RISOMES</strong><br>
+            Société par Actions Simplifiée au capital de 5 000 €<br>
+            Siège social : 38500 Coublevie<br>
+            SIREN : 988 870 473 – RCS Grenoble<br>
+            Numéro APE : 70.22Z</p>
+            <p>Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <h4>Édition du site</h4>
+            <p>Le présent site est édité par la SAS RISOMES.</p>
+            <h4>Directrice de la publication</h4>
+            <p>La directrice de la publication du site est Mathilde Théry.</p>
+            <h4>Réalisation du site</h4>
+            <p>Conception et réalisation par Mathilde Théry et Blandine Collin.</p>
+            <h4>Hébergement</h4>
+            <p>Le site est hébergé par Netlify, Inc.<br>
+            101 2nd Street, San Francisco, CA 94105, États-Unis</p>
+            <h4>Données personnelles</h4>
+            <p>Le traitement de vos données à caractère personnel est régi par notre politique de confidentialité, conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 (« RGPD »). <a href="#" onclick="document.getElementById('mentionsLegalesModal').style.display='none'; openDataModal(); return false;">Consulter la politique de confidentialité</a>.</p>
+            <h4>Contact</h4>
+            <p>Pour toute question relative aux présentes mentions légales : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+        </div>
+    </div>
+
     <div id="dataModal" class="modal">
         <div class="modal-content modal-large">
             <span class="close">&times;</span>

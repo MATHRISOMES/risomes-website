@@ -56,6 +56,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <header class="header">
         <div class="navbar container">
             <a href="/" class="nav-brand">
@@ -77,7 +78,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero hero-homepage">
             <div class="container hero-content">
                 <img src="assets/images/LOGOCOMPLETRISOMES.png" alt="RISOMES Logo" class="hero-logo">
@@ -278,7 +279,6 @@
                     <div class="risomes-carrousel-dots" role="tablist" aria-label="Navigation du carrousel"></div>
                 </div>
                 </div>
-            </div>
         </section>
 
         <section class="section" aria-label="Dernière publication LinkedIn RISOMES">
@@ -294,14 +294,14 @@
                         3. Remplacer la date et le texte d'extrait (2 lignes max)
                         ============================================
                     -->
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7490367555883311104"
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7496457309976662017"
                        target="_blank"
                        rel="noopener noreferrer"
                        class="risomes-linkedin-card"
-                       aria-label="Voir notre dernière publication sur LinkedIn (ouvre dans un nouvel onglet)">
-                        <p class="risomes-linkedin-date">4 août 2026</p>
+                       aria-label="Lire sur LinkedIn : notre dernière publication (ouvre dans un nouvel onglet)">
+                        <p class="risomes-linkedin-date">21 août 2026</p>
                         <p class="risomes-linkedin-text">
-                            Toujours important de vérifier et mettre à jour les protocoles internes : le 3133 et l'outil Sirena sont désormais incontournables, mais deux points restent mal maîtrisés sur le terrain.
+                            Merci à la DGCS de s'être penchée sur la situation hybride des assistants maternels en crèche familiale, sur laquelle nous sommes questionnées lors des formations. Une FAQ qui répond à certaines interrogations.
                         </p>
                         <span class="risomes-linkedin-cta" aria-hidden="true">Lire sur LinkedIn →</span>
                     </a>
@@ -331,7 +331,8 @@
                 <a href="/nos-solutions">Nos solutions</a>
                 <a href="/notre-approche">Notre approche</a>
                 <a href="/contact">Contact</a>
-                <a href="#" onclick="openCGVModal()">CGV</a>
+                <a href="#" onclick="openMentionsLegalesModal()">Mentions légales</a>
+                    <a href="#" onclick="openCGVModal()">CGV</a>
                 <a href="#" onclick="openDataModal()">Données personnelles</a>
             </div>
             <div class="footer-contact">
@@ -357,7 +358,7 @@
             >
                 <input type="hidden" name="form-name" value="offres-accueil" />
                 <p style="display:none;">
-                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                    <label for="bot-field-index">Ne pas remplir si vous êtes humain :</label><input id="bot-field-index" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
                     <label for="structure">Ma structure :</label>
@@ -390,7 +391,7 @@
             <h3>Conditions Générales de Vente (CGV)</h3>
             <div class="modal-body">
                 <h4>Société</h4>
-                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le Médico-Social</strong><br>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
                 Forme juridique : Société par Actions Simplifiée (SAS)<br>
                 Capital social : 5 000 €<br>
                 Siège social : 38500 COUBLEVIE<br>
@@ -434,18 +435,58 @@
 
                 <h4>8. Droit applicable et juridiction</h4>
                 <p>Les présentes CGV sont soumises au droit français. En cas de litige, compétence exclusive est attribuée au tribunal compétent du ressort du siège social de RISOMES.</p>
+                <h4>9. Modalités matérielles d'intervention</h4>
+                <p><strong>Locaux mis à disposition</strong><br>
+                Sauf disposition contraire prévue au devis, l'établissement ou la collectivité commanditaire met à disposition de RISOMES une salle adaptée à la prestation, dont la capacité d'accueil est précisée conjointement avant l'intervention en fonction du nombre de participants prévu.</p>
+                <p><strong>Accessibilité des locaux</strong><br>
+                L'accessibilité de la salle aux personnes en situation de handicap est vérifiée en amont au moyen de la check-list dédiée, sous la responsabilité de Mathilde Théry, référente handicap de RISOMES. Cette vérification conditionne, le cas échéant, l'adaptation des modalités pédagogiques prévues.</p>
+                <p><strong>Équipement pédagogique</strong><br>
+                L'établissement met à disposition un tableau blanc ou paperboard ainsi qu'un écran de projection. À défaut, RISOMES peut fournir son propre matériel de projection sur demande formulée avant l'intervention.</p>
             </div>
         </div>
     </div>
 
     <!-- Modal Données personnelles -->
+    <!-- Modal Mentions légales -->
+    
+    <!-- Modal Règlement intérieur -->
+        <!-- Modal Règlement intérieur -->
+    
+
+<div id="mentionsLegalesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mentions légales</h3>
+            <h4>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</h4>
+            <p><strong>RISOMES</strong><br>
+            Société par Actions Simplifiée au capital de 5 000 €<br>
+            Siège social : 38500 Coublevie<br>
+            SIREN : 988 870 473 – RCS Grenoble<br>
+            Numéro APE : 70.22Z</p>
+            <p>Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <h4>Édition du site</h4>
+            <p>Le présent site est édité par la SAS RISOMES.</p>
+            <h4>Directrice de la publication</h4>
+            <p>La directrice de la publication du site est Mathilde Théry.</p>
+            <h4>Réalisation du site</h4>
+            <p>Conception et réalisation par Mathilde Théry et Blandine Collin.</p>
+            <h4>Hébergement</h4>
+            <p>Le site est hébergé par Netlify, Inc.<br>
+            101 2nd Street, San Francisco, CA 94105, États-Unis</p>
+            <h4>Données personnelles</h4>
+            <p>Le traitement de vos données à caractère personnel est régi par notre politique de confidentialité, conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 (« RGPD »). <a href="#" onclick="document.getElementById('mentionsLegalesModal').style.display='none'; openDataModal(); return false;">Consulter la politique de confidentialité</a>.</p>
+            <h4>Contact</h4>
+            <p>Pour toute question relative aux présentes mentions légales : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+        </div>
+    </div>
+
     <div id="dataModal" class="modal">
         <div class="modal-content modal-large">
             <span class="close">&times;</span>
             <h3>Politique de confidentialité - Données personnelles</h3>
             <div class="modal-body">
                 <h4>Mentions légales</h4>
-                <p><strong>Réponses Innovantes Solutions Opérationnelles dans le Médico-Social - RISOMES</strong><br>
+                <p><strong>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social - RISOMES</strong><br>
                 Société par Actions Simplifiée au capital de 5.000 €<br>
                 Siège social : 38500 COUBLEVIE<br>
                 SIREN 988 870 473 RCS GRENOBLE<br>

@@ -14,10 +14,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://risomes.fr/nos-solutions">
     <meta property="og:title" content="RISOMES - Nos solutions">
+    <meta name="description" content="Découvrez nos formations immersives, sensibilisations et accompagnements stratégiques pour les collectivités et le secteur médico-social.">
     <meta property="og:description" content="Découvrez nos formations immersives, sensibilisations et accompagnements stratégiques pour les collectivités et le secteur médico-social.">
     <meta property="og:image" content="https://risomes.fr/assets/images/LOGOCOMPLETRISOMES.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
@@ -43,17 +45,44 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero page-hero">
+    <section class="hero page-hero" id="main-content">
         <div class="container">
-            <h1 class="page-title page-title-large">Nos solutions</h1>
+            <h1 class="page-title page-title-large" style="display:flex; align-items:center; justify-content:center; gap:0.6rem;">
+                <img src="assets/images/Fichier15@2x.png" alt="" style="height:1em; width:auto;">
+                Nos solutions
+            </h1>
             <p class="page-subtitle">Des formations, accompagnements et services adaptés à vos besoins</p>
         </div>
     </section>
 
+    <!-- Navigation par blocs dépliables -->
+    <section class="section" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="solutions-nav-grid">
+                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations', this)" aria-expanded="false" aria-controls="section-sensibilisations">
+                    <i class="fas fa-chalkboard-teacher icon"></i>
+                    <span>Les sensibilisations</span>
+                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives', this)" aria-expanded="false" aria-controls="section-formations-immersives">
+                    <i class="fas fa-graduation-cap icon"></i>
+                    <span>Les formations immersives</span>
+                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-accompagnements', this)" aria-expanded="false" aria-controls="section-accompagnements">
+                    <i class="fas fa-handshake icon"></i>
+                    <span>Les accompagnements et services</span>
+                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Sensibilisations Section -->
-    <section class="section">
+    <section class="section" id="section-sensibilisations" style="display:none;">
         <div class="container">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher icon"></i> Les sensibilisations</h2>
+            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-comments icon"></i> Recueillir la parole des usagers — Entre démarche éthique et réglementation</h3>
@@ -119,9 +148,10 @@
     </section>
 
     <!-- Formations immersives Section -->
-    <section class="section bg-light">
+    <section class="section bg-light" id="section-formations-immersives" style="display:none;">
         <div class="container">
             <h2 class="section-title" id="les-services-de-formations-immersives"><i class="fas fa-graduation-cap icon"></i> Les services de formations immersives</h2>
+            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-gavel icon"></i> Mener une enquête administrative (ASSFAM & ASSMAT)</h3>
@@ -194,7 +224,7 @@
     </section>
 
     <!-- Accompagnements Section -->
-    <section class="section">
+    <section class="section" id="section-accompagnements" style="display:none;">
         <div class="container">
             <h2 class="section-title" id="les-accompagnements"><i class="fas fa-handshake icon"></i> Les accompagnements</h2>
             <div class="solutions-grid">
@@ -246,57 +276,13 @@
         </div>
     </section>
 
-    <!-- Packs Section -->
+    <!-- Besoins spécifiques / Prise de rendez-vous Section -->
     <section class="section bg-light">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-box-open icon"></i> Les packs</h2>
-            <div class="solutions-grid">
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-users-cog icon"></i> Pack « Formation continue des équipes »</h3>
-                    <p><strong>Description :</strong> Pour les équipes qui souhaitent se former sur toute l'année :</p>
-                    <p>3 formations sensibilisation au choix parmi le catalogue</p>
-                    <p>1 formation action: accompagnement sur la méthodologie d'autorisation & contrôle EAJE</p>
-                </div>
-
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-user-tie icon"></i> Pack « Professionnalisation Contrôle EAJE »</h3>
-                    <p><strong>Description :</strong> Idéal pour les responsables ou équipes qui veulent maîtriser tous les aspects du contrôle EAJE :</p>
-                    <p>Formation-Sensibilisation « Réglementation des EAJE »</p>
-                    <p>Formation-sensibilisation « Contrôler un EAJE »</p>
-                    <p>Formation-Action: « Evaluer les alertes et maîtriser les risques en EAJE »</p>
-                    <p>1 accompagnement à la définition des besoins en outils</p>
-                </div>
-
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-medkit icon"></i> Pack « Gestion de crise & RETEX »</h3>
-                    <p><strong>Description :</strong> Pour les collectivités confrontées à une situation d'urgence ou souhaitant capitaliser sur l'expérience :</p>
-                    <p>Déclenchement d'un contrôle en urgence</p>
-                    <p>Réaliser un RETEX & soutenir les pratiques</p>
-                    <p>2h de SAV conseils offertes</p>
-                </div>
-
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-shield-alt icon"></i> Pack « Démarrage Sécurisé »</h3>
-                    <p><strong>Description :</strong> Pour les organisations qui veulent lancer une démarche qualité ou un contrôle en toute sérénité :</p>
-                    <p>Accompagnement 3 mois (suivi personnalisé)</p>
-                    <p>Formation « Contrôle ESSMS -- Entre représentations et objectivation des informations »</p>
-                    <p>1 session de SAV conseils (1h offerte)</p>
-                </div>
-
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-chart-pie icon"></i> Pack « Expertise & Performance »</h3>
-                    <p><strong>Description :</strong> Pour les collectivités qui souhaitent aller plus loin dans l'optimisation de leurs pratiques :</p>
-                    <p>Accompagnement 6 mois</p>
-                    <p>Formation-Sensibilisation « contrôle financier via la Tarification et CPOM »</p>
-                    <p>Formation-action « Le contrôle, outil au service de la qualité »</p>
-                </div>
-
-                <div class="solution-card pack-card">
-                    <h3><i class="fas fa-cogs icon"></i> Pack « personnalisable »</h3>
-                    <p><strong>Description :</strong> Pour les professionnels qui souhaitent un pack sur mesure :</p>
-                    <p>2 formations au choix parmi le catalogue</p>
-                    <p>1 accompagnement 3 ou 6 mois au choix</p>
-                </div>
+            <div class="rdv-callout">
+                <h2 class="section-title"><i class="fas fa-calendar-check icon"></i> Vous avez des besoins spécifiques ?</h2>
+                <p>Nous vous offrons un échange téléphonique ou une visio de 30 minutes pour échanger sur vos besoins.</p>
+                <button type="button" class="btn-primary" id="openRdvModalBtn">Prendre un rendez-vous</button>
             </div>
         </div>
     </section>
@@ -322,6 +308,7 @@
                     <a href="/qui-sommes-nous">Qui sommes-nous ?</a>
                     <a href="/nos-solutions">Nos solutions</a>
                     <a href="/contact">Contact</a>
+                    <a href="#" onclick="openMentionsLegalesModal()">Mentions légales</a>
                     <a href="#" onclick="openCGVModal()">CGV</a>
                     <a href="#" onclick="openDataModal()">Données personnelles</a>
                 </div>
@@ -336,6 +323,48 @@
         </div>
     </footer>
 
+    <!-- Modal Prise de rendez-vous -->
+    <div id="rdvModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Prendre un rendez-vous</h3>
+            <p style="margin-bottom:1.25rem; color:var(--text-muted-accessible);">Échange téléphonique ou visio de 30 minutes, sans engagement, pour parler de votre besoin.</p>
+            <form
+                name="demande-rdv"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/merci.html"
+            >
+                <input type="hidden" name="form-name" value="demande-rdv" />
+                <p style="display:none;">
+                    <label>Ne pas remplir si vous êtes humain : <input id="bot-field-rdv" name="bot-field" aria-label="Ne pas remplir ce champ" /></label>
+                </p>
+                <div class="form-group">
+                    <label for="rdv-nom">Nom *</label>
+                    <input type="text" id="rdv-nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="rdv-prenom">Prénom *</label>
+                    <input type="text" id="rdv-prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="rdv-contact">Téléphone ou email *</label>
+                    <input type="text" id="rdv-contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="rdv-structure">Structure concernée</label>
+                    <input type="text" id="rdv-structure" name="structure">
+                </div>
+                <div class="form-group">
+                    <label for="rdv-message">Votre message et vos préférences de rappel</label>
+                    <textarea id="rdv-message" name="message" rows="4" placeholder="Ex. : disponible en fin de journée, préférence pour la visio..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Envoyer ma demande</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Modal CGV -->
     <div id="cgvModal" class="modal">
         <div class="modal-content modal-large">
@@ -343,7 +372,7 @@
             <h3>Conditions Générales de Vente (CGV)</h3>
             <div class="modal-body">
                 <h4>Société</h4>
-                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le Médico-Social</strong><br>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
                 Forme juridique : Société par Actions Simplifiée (SAS)<br>
                 Capital social : 5 000 €<br>
                 Siège social : 38500 COUBLEVIE<br>
@@ -379,6 +408,13 @@
                 <p>RISOMES est tenue à une obligation de moyens. Elle ne saurait être tenue responsable des décisions ou actions du client fondées sur ses recommandations. En tout état de cause, sa responsabilité est limitée au montant total facturé pour la mission concernée.</p>
                 <h4>8. Droit applicable et juridiction</h4>
                 <p>Les présentes CGV sont soumises au droit français. En cas de litige, compétence exclusive est attribuée au tribunal compétent du ressort du siège social de RISOMES.</p>
+                <h4>9. Modalités matérielles d'intervention</h4>
+                <p><strong>Locaux mis à disposition</strong><br>
+                Sauf disposition contraire prévue au devis, l'établissement ou la collectivité commanditaire met à disposition de RISOMES une salle adaptée à la prestation, dont la capacité d'accueil est précisée conjointement avant l'intervention en fonction du nombre de participants prévu.</p>
+                <p><strong>Accessibilité des locaux</strong><br>
+                L'accessibilité de la salle aux personnes en situation de handicap est vérifiée en amont au moyen de la check-list dédiée, sous la responsabilité de Mathilde Théry, référente handicap de RISOMES. Cette vérification conditionne, le cas échéant, l'adaptation des modalités pédagogiques prévues.</p>
+                <p><strong>Équipement pédagogique</strong><br>
+                L'établissement met à disposition un tableau blanc ou paperboard ainsi qu'un écran de projection. À défaut, RISOMES peut fournir son propre matériel de projection sur demande formulée avant l'intervention.</p>
             </div>
         </div>
     </div>
@@ -390,7 +426,7 @@
             <h3>Conditions Générales de Vente (CGV)</h3>
             <div class="modal-body">
                 <h4>Société</h4>
-                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le Médico-Social</strong><br>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
                 Forme juridique : Société par Actions Simplifiée (SAS)<br>
                 Capital social : 5 000 €<br>
                 Siège social : Coublevie<br>
@@ -455,6 +491,39 @@
     </div>
 
     <!-- Modal Données personnelles -->
+    <!-- Modal Mentions légales -->
+    
+    <!-- Modal Règlement intérieur -->
+        <!-- Modal Règlement intérieur -->
+    
+
+<div id="mentionsLegalesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mentions légales</h3>
+            <h4>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</h4>
+            <p><strong>RISOMES</strong><br>
+            Société par Actions Simplifiée au capital de 5 000 €<br>
+            Siège social : 38500 Coublevie<br>
+            SIREN : 988 870 473 – RCS Grenoble<br>
+            Numéro APE : 70.22Z</p>
+            <p>Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <h4>Édition du site</h4>
+            <p>Le présent site est édité par la SAS RISOMES.</p>
+            <h4>Directrice de la publication</h4>
+            <p>La directrice de la publication du site est Mathilde Théry.</p>
+            <h4>Réalisation du site</h4>
+            <p>Conception et réalisation par Mathilde Théry et Blandine Collin.</p>
+            <h4>Hébergement</h4>
+            <p>Le site est hébergé par Netlify, Inc.<br>
+            101 2nd Street, San Francisco, CA 94105, États-Unis</p>
+            <h4>Données personnelles</h4>
+            <p>Le traitement de vos données à caractère personnel est régi par notre politique de confidentialité, conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 (« RGPD »). <a href="#" onclick="document.getElementById('mentionsLegalesModal').style.display='none'; openDataModal(); return false;">Consulter la politique de confidentialité</a>.</p>
+            <h4>Contact</h4>
+            <p>Pour toute question relative aux présentes mentions légales : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+        </div>
+    </div>
+
     <div id="dataModal" class="modal">
         <div class="modal-content modal-large">
             <span class="close">&times;</span>
@@ -511,7 +580,7 @@
             >
                 <input type="hidden" name="form-name" value="devis-sensibilisations" />
                 <p style="display:none;">
-                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                    <label for="bot-field-nos-solutions-1">Ne pas remplir si vous êtes humain :</label><input id="bot-field-nos-solutions-1" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
                     <label for="nom1">Nom *</label>
@@ -578,7 +647,7 @@
             >
                 <input type="hidden" name="form-name" value="devis-formations-immersives" />
                 <p style="display:none;">
-                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                    <label for="bot-field-nos-solutions-2">Ne pas remplir si vous êtes humain :</label><input id="bot-field-nos-solutions-2" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
                     <label for="nom2">Nom *</label>
@@ -654,7 +723,7 @@
             >
                 <input type="hidden" name="form-name" value="devis-accompagnements" />
                 <p style="display:none;">
-                    <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+                    <label for="bot-field-nos-solutions-3">Ne pas remplir si vous êtes humain :</label><input id="bot-field-nos-solutions-3" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
                     <label for="nom3">Nom *</label>

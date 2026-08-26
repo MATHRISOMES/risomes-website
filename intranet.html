@@ -12,20 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.html">
+                <a href="/">
                     <img src="assets/images/Fichier16@2x.png" alt="RISOMES Logo" class="nav-logo">
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="qui-sommes-nous.html" class="nav-link">Qui sommes-nous ?</a></li>
-                <li><a href="nos-solutions.html" class="nav-link">Nos solutions</a></li>
-                <li><a href="notre-approche.html" class="nav-link">Notre approche</a></li>
-                <li><a href="contact.html" class="nav-link">Nous contacter</a></li>
+                <li><a href="/" class="nav-link">Accueil</a></li>
+                <li><a href="/qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
+                <li><a href="/nos-solutions" class="nav-link">Nos solutions</a></li>
+                <li><a href="/notre-approche" class="nav-link">Notre approche</a></li>
+                <li><a href="/contact" class="nav-link">Nous contacter</a></li>
                 <li><a href="intranet.html" class="nav-link active">Intranet</a></li>
             </ul>
             <div class="hamburger">
@@ -37,7 +38,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero page-hero">
+    <section class="hero page-hero" id="main-content">
         <div class="container">
             <h1 class="page-title">Intranet</h1>
             <p class="page-subtitle">Service réservé aux abonnés</p>
@@ -66,7 +67,7 @@
                     </div>
                     
                     <div class="login-help">
-                        <p>Pas encore abonné ? <a href="contact.html"><i class="fas fa-envelope icon"></i> Contactez-nous</a></p>
+                        <p>Pas encore abonné ? <a href="/contact"><i class="fas fa-envelope icon"></i> Contactez-nous</a></p>
                     </div>
                 </div>
                 
@@ -147,11 +148,12 @@
                     <img src="assets/images/LOGOCOMPLETRISOMES.png" alt="RISOMES Logo Complet" class="footer-logo-full">
                 </div>
                 <div class="footer-links">
-                    <a href="index.html">Accueil</a>
-                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-                    <a href="nos-solutions.html">Nos solutions</a>
-                    <a href="notre-approche.html">Notre approche</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="/">Accueil</a>
+                    <a href="/qui-sommes-nous">Qui sommes-nous ?</a>
+                    <a href="/nos-solutions">Nos solutions</a>
+                    <a href="/notre-approche">Notre approche</a>
+                    <a href="/contact">Contact</a>
+                    <a href="#" onclick="openMentionsLegalesModal()">Mentions légales</a>
                     <a href="#" onclick="openCGVModal()">CGV</a>
                     <a href="#" onclick="openDataModal()">Données personnelles</a>
                 </div>
@@ -163,7 +165,130 @@
                 <p>&copy; 2026 RISOMES. Tous droits réservés.</p>
             </div>
         </div>
+    <!-- Modal Règlement intérieur -->
+        <!-- Modal Règlement intérieur -->
+    
     </footer>
+
+<div id="mentionsLegalesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Mentions légales</h3>
+            <h4>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</h4>
+            <p><strong>RISOMES</strong><br>
+            Société par Actions Simplifiée au capital de 5 000 €<br>
+            Siège social : 38500 Coublevie<br>
+            SIREN : 988 870 473 – RCS Grenoble<br>
+            Numéro APE : 70.22Z</p>
+            <h4>Édition du site</h4>
+            <p>Le présent site est édité par la SAS RISOMES.</p>
+            <h4>Directrice de la publication</h4>
+            <p>La directrice de la publication du site est Mathilde Théry.</p>
+            <h4>Réalisation du site</h4>
+            <p>Conception et réalisation par Mathilde Théry et Blandine Collin.</p>
+            <h4>Hébergement</h4>
+            <p>Le site est hébergé par Netlify, Inc.<br>
+            101 2nd Street, San Francisco, CA 94105, États-Unis</p>
+            <h4>Données personnelles</h4>
+            <p>Le traitement de vos données à caractère personnel est régi par notre politique de confidentialité, conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 (« RGPD »). <a href="#" onclick="document.getElementById('mentionsLegalesModal').style.display='none'; openDataModal(); return false;">Consulter la politique de confidentialité</a>.</p>
+            <h4>Contact</h4>
+            <p>Pour toute question relative aux présentes mentions légales : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+        </div>
+    </div>
+
+<div id="cgvModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h3>Conditions Générales de Vente (CGV)</h3>
+            <div class="modal-body">
+                <h4>Société</h4>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
+                Forme juridique : Société par Actions Simplifiée (SAS)<br>
+                Capital social : 5 000 €<br>
+                Siège social : 38500 COUBLEVIE<br>
+                SIREN : 988 870 473 – RCS Grenoble<br>
+                Numéro APE : 70.22Z</p>
+                <h4>1. Champ d'application</h4>
+                <p>Les présentes Conditions Générales de Vente s'appliquent à toutes les prestations de conseil et d'accompagnement fournies par RISOMES aux collectivités publiques, entreprises et autres organismes, qu'ils soient publics ou privés, en France et à l'étranger.</p>
+                <p>Elles prévalent sur tout document du client, sauf dérogation expresse et écrite.</p>
+                <h4>2. Objet de la mission</h4>
+                <p>RISOMES intervient dans les domaines suivants :</p>
+                <ul>
+                    <li>Conseil et accompagnement stratégique et organisationnel des collectivités publiques, entreprises et organismes publics ou privés</li>
+                    <li>Optimisation de l'efficience et de la qualité des missions confiées</li>
+                    <li>Services d'accompagnement personnalisé, veille juridique et formation</li>
+                    <li>Conception et sécurisation d'outils, supervision technique des processus</li>
+                    <li>Audit, contrôle interne et évaluation en établissements et services sociaux et médico-sociaux (ESSMS)</li>
+                    <li>Management de transition dans le secteur médico-social</li>
+                </ul>
+                <h4>3. Commande et contractualisation</h4>
+                <p>Toute prestation fait l'objet d'un devis ou d'une lettre de mission précisant les objectifs, le périmètre d'intervention, les livrables attendus, les modalités d'exécution et les conditions financières.</p>
+                <h4>4. Prix et modalités de paiement</h4>
+                <p>Les prix sont exprimés en euros hors taxes et soumis à la TVA au taux en vigueur.</p>
+                <ul>
+                    <li>Acompte : 30 % à la signature du devis, sauf accord contraire</li>
+                    <li>Solde : payable à réception de facture, selon les échéances définies</li>
+                    <li>Retard de paiement : pénalités de retard au taux légal en vigueur, majorées d'une indemnité forfaitaire de 40 € pour frais de recouvrement</li>
+                </ul>
+                <h4>5. Confidentialité</h4>
+                <p>Chaque partie s'engage à garder strictement confidentielles toutes les informations échangées. Cette obligation perdure pendant 5 ans après la fin de la prestation.</p>
+                <h4>6. Propriété intellectuelle</h4>
+                <p>Les livrables, outils, rapports et supports mis au point par RISOMES sont la propriété exclusive de la société. Toute reproduction, diffusion ou exploitation sans autorisation écrite préalable est interdite.</p>
+                <h4>7. Responsabilité</h4>
+                <p>RISOMES est tenue à une obligation de moyens. Elle ne saurait être tenue responsable des décisions ou actions du client fondées sur ses recommandations. En tout état de cause, sa responsabilité est limitée au montant total facturé pour la mission concernée.</p>
+                <h4>8. Droit applicable et juridiction</h4>
+                <p>Les présentes CGV sont soumises au droit français. En cas de litige, compétence exclusive est attribuée au tribunal compétent du ressort du siège social de RISOMES.</p>
+                <h4>9. Modalités matérielles d'intervention</h4>
+                <p><strong>Locaux mis à disposition</strong><br>
+                Sauf disposition contraire prévue au devis, l'établissement ou la collectivité commanditaire met à disposition de RISOMES une salle adaptée à la prestation, dont la capacité d'accueil est précisée conjointement avant l'intervention en fonction du nombre de participants prévu.</p>
+                <p><strong>Accessibilité des locaux</strong><br>
+                L'accessibilité de la salle aux personnes en situation de handicap est vérifiée en amont au moyen de la check-list dédiée, sous la responsabilité de Mathilde Théry, référente handicap de RISOMES. Cette vérification conditionne, le cas échéant, l'adaptation des modalités pédagogiques prévues.</p>
+                <p><strong>Équipement pédagogique</strong><br>
+                L'établissement met à disposition un tableau blanc ou paperboard ainsi qu'un écran de projection. À défaut, RISOMES peut fournir son propre matériel de projection sur demande formulée avant l'intervention.</p>
+            </div>
+        </div>
+    </div>
+
+<div id="dataModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h3>Politique de confidentialité - Données personnelles</h3>
+            <div class="modal-body">
+                <h4>Mentions légales</h4>
+                <p><strong>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social - RISOMES</strong><br>
+                Société par Actions Simplifiée au capital de 5.000 €<br>
+                Siège social : 38500 COUBLEVIE<br>
+                SIREN 988 870 473 RCS GRENOBLE<br>
+                Numéro APE : 70.22Z</p>
+                <h4>1. Préambule</h4>
+                <p>La présente politique de confidentialité a pour but d'informer les utilisateurs du site sur la manière dont sont collectées leurs données personnelles et sur les droits dont ils disposent concernant ces données.</p>
+                <h4>2. Données collectées</h4>
+                <p>Les données personnelles collectées dans le cadre de notre activité sont les suivantes : mail, nom et prénom.</p>
+                <p>La collecte et le traitement de ces données répond à la finalité suivante : Suivi de la qualité du service et envoi des informations demandées.</p>
+                <h4>3. Responsable du traitement</h4>
+                <p>Les données à caractère personnel sont collectées par RISOMES.</p>
+                <p>Le responsable du traitement peut être contacté par mail : <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+                <h4>4. Vos droits</h4>
+                <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+                <ul>
+                    <li>Droit d'accès, de rectification et droit à l'effacement des données</li>
+                    <li>Droit à la portabilité des données</li>
+                    <li>Droit à la limitation et à l'opposition du traitement des données</li>
+                    <li>Droit de ne pas faire l'objet d'une décision fondée exclusivement sur un procédé automatisé</li>
+                    <li>Droit de déterminer le sort des données après la mort</li>
+                    <li>Droit de saisir l'autorité de contrôle compétente</li>
+                </ul>
+                <h4>5. Exercer vos droits</h4>
+                <p>Pour exercer vos droits, veuillez adresser votre demande par mail à <a href="mailto:contact@risomes.fr">contact@risomes.fr</a></p>
+                <p>Consultez le site <a href="https://www.cnil.fr" target="_blank">cnil.fr</a> pour plus d'informations sur vos droits.</p>
+                <h4>6. Hébergement</h4>
+                <p>Le site RISOMES est hébergé par NETLIFY.</p>
+                <h4>7. Conservation des données</h4>
+                <p>Les données sont conservées pendant la durée nécessaire à la gestion de la relation commerciale, soit 3 ans à compter de la fin de la relation commerciale ou du dernier contact.</p>
+            </div>
+        </div>
+    </div>
+
 
     <script src="assets/js/script.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
