@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const cgvModal = document.getElementById("cgvModal");
     const dataModal = document.getElementById("dataModal");
     const mentionsLegalesModal = document.getElementById("mentionsLegalesModal");
-    const reglementModal = document.getElementById("reglementModal");
 
     // Fonction pour ouvrir les modales
     window.openCGVModal = function() {
@@ -114,15 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    window.openReglementModal = function() {
-        if (reglementModal) {
-            reglementModal.style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-    };
-
     // Fermeture générique : chaque modale gère sa propre croix et son propre clic extérieur
-    [cgvModal, dataModal, mentionsLegalesModal, reglementModal].forEach(function(modal) {
+    [cgvModal, dataModal, mentionsLegalesModal].forEach(function(modal) {
         if (!modal) return;
         const closeBtn = modal.querySelector(".close");
         if (closeBtn) {
@@ -219,6 +211,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Modale de prise de rendez-vous (encart "besoins spécifiques")
+    const rdvModal = document.getElementById("rdvModal");
+    const openRdvModalBtn = document.getElementById("openRdvModalBtn");
+    if (openRdvModalBtn && rdvModal) {
+        openRdvModalBtn.addEventListener("click", function() {
+            rdvModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements"
+    window.toggleSolutionSection = function(sectionId, btn) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        const isOpen = section.style.display !== "none";
+        section.style.display = isOpen ? "none" : "block";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        btn.classList.toggle("active", !isOpen);
+        if (!isOpen) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     // Fonction pour fermer les modales de contact
     function setupContactModalClose(modal) {
         if (modal) {
@@ -242,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setupContactModalClose(contactModal1);
     setupContactModalClose(contactModal2);
     setupContactModalClose(contactModal3);
+    setupContactModalClose(rdvModal);
 
     // Gestion des formulaires de contact — Netlify Forms gère nativement la
     // soumission (data-netlify="true" ajouté directement dans le HTML).
