@@ -222,13 +222,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements"
-    window.toggleSolutionSection = function(sectionId, btn) {
+    window.toggleSolutionSection = function(sectionId) {
         const section = document.getElementById(sectionId);
         if (!section) return;
         const isOpen = section.style.display !== "none";
         section.style.display = isOpen ? "none" : "block";
-        btn.setAttribute("aria-expanded", String(!isOpen));
-        btn.classList.toggle("active", !isOpen);
+        document.querySelectorAll('[aria-controls="' + sectionId + '"]').forEach(function(btn) {
+            btn.setAttribute("aria-expanded", String(!isOpen));
+            btn.classList.toggle("active", !isOpen);
+        });
         if (!isOpen) {
             section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
