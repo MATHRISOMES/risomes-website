@@ -1541,6 +1541,18 @@ Utilise les variables CSS existantes — aucune couleur en dur
     }
 }
 
+.solutions-nav-grid-small {
+    max-width: 640px;
+    margin: 2rem auto 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 600px) {
+    .solutions-nav-grid-small {
+        grid-template-columns: 1fr;
+    }
+}
+
 .solutions-nav-card {
     display: flex;
     align-items: center;
