@@ -12,6 +12,7 @@
     --text-dark: #2d3748;
     --text-light: #718096;
     --text-muted-accessible: #5a6b7b; /* contraste 5,5:1 sur blanc — conforme WCAG 1.4.3 (AA) */
+    --text-light-on-dark: #a0aec0; /* contraste 5,3:1 sur fond sombre (--text-dark) — conforme WCAG 1.4.3 (AA) */
     --bg-light: #f7fafc;
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -678,7 +679,7 @@ body {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid #4a5568;
-    color: var(--text-light);
+    color: var(--text-light-on-dark);
 }
 
 /* Modales */
@@ -940,7 +941,7 @@ body {
 }
 
 .contact-description {
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     font-size: 0.95rem;
     font-style: italic;
 }
@@ -993,7 +994,7 @@ body {
 
 .dashboard-item p {
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
 }
 
 .updates-list {
@@ -1025,7 +1026,7 @@ body {
 }
 
 .update-content p {
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     line-height: 1.6;
 }
 
@@ -1326,7 +1327,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-slide-mission {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     margin: 0.25rem 0 1.5rem;
     text-align: center;
     font-style: normal;
@@ -1395,7 +1396,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-idealco-caption {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     margin: 0.5rem 0 0;
 }
 
@@ -1431,7 +1432,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-linkedin-date {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     margin: 0 0 0.5rem;
 }
 
@@ -1467,7 +1468,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .risomes-logos-titre {
     font-size: 0.82rem;
-    color: var(--text-light);
+    color: var(--text-muted-accessible);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 1.25rem;
@@ -1613,4 +1614,19 @@ Utilise les variables CSS existantes — aucune couleur en dur
 .rdv-callout p {
     margin-bottom: 1.5rem;
     color: var(--text-dark);
+}
+
+/* ============================================================
+   Texte accessible uniquement aux lecteurs d'écran — WCAG 2.5.3
+   ============================================================ */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
