@@ -60,18 +60,27 @@
         <div class="container">
             <div class="solutions-nav-grid">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
-                    <i class="fas fa-chalkboard-teacher icon"></i>
-                    <span>Les sensibilisations</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-chalkboard-teacher"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les sensibilisations</span>
+                        <span class="nav-card-desc">Pour vos agents : une journée pour acquérir les repères essentiels.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
-                    <i class="fas fa-graduation-cap icon"></i>
-                    <span>Les formations immersives</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les formations immersives</span>
+                        <span class="nav-card-desc">Pour vos agents : jusqu'à 3 jours de cas pratiques et de mises en situation.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-accompagnements')" aria-expanded="false" aria-controls="section-accompagnements">
-                    <i class="fas fa-handshake icon"></i>
-                    <span>Les accompagnements et services</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-handshake"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les accompagnements et services</span>
+                        <span class="nav-card-desc">Pour vos directions et vos services : conseil, analyses, process et outils de pilotage.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
             </div>
@@ -83,13 +92,21 @@
         <div class="container">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher icon"></i> Les sensibilisations</h2>
             <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-sensibilisations')" aria-controls="section-sensibilisations"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-comments icon"></i> Recueillir la parole des usagers — Entre démarche éthique et réglementation</h3>
 	                    
 	                    <p><strong>Description :</strong> Explorer les enjeux éthiques et juridiques liés au recueil de la parole des usagers, en s’appuyant sur des méthodes concrètes et adaptées aux réalités de terrain.</p>
 	                    <p><strong>Pour qui :</strong> Professionnels réalisant des contrôles, inspections ou enquêtes administratives ayant suivi des formations sur le contrôle.</p>
-	                    <p><strong>Apport :</strong> Renforce la capacité à recueillir, analyser et valoriser la parole des usagers dans un cadre sécurisé et respectueux.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>identifier les enjeux éthiques et réglementaires du recueil de la parole des usagers</li>
+	                        <li>choisir une méthode de recueil adaptée à la situation et au public concerné</li>
+	                        <li>recueillir et analyser la parole des usagers dans un cadre sécurisé et respectueux</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Intégrer la parole des usagers dans les pratiques de contrôle ou d’enquête, en conciliant exigences réglementaires et éthique professionnelle.</p>
                 </div>
 
@@ -97,7 +114,13 @@
 <h3><i class="fas fa-calculator icon"></i> Lecture stratégique du CPOM, des factures et de l’organisation financière lors d’un contrôle</h3>
 	                    <p><strong>Description :</strong> Développer une lecture stratégique des documents budgétaires et contractuels dans le cadre d’un contrôle.</p>
 	                    <p><strong>Pour qui :</strong> Professionnels des services ayant des missions de contrôle ou d’inspection.</p>
-	                    <p><strong>Apport:</strong> Développer une lecture stratégique des documents financiers et leur articulation avec les constats de terrain.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>repérer les informations utiles dans un CPOM, une facture ou un document budgétaire</li>
+	                        <li>mettre en relation les données contractuelles, budgétaires et organisationnelles</li>
+	                        <li>identifier les incohérences et les points de vigilance</li>
+	                        <li>formuler des constats argumentés à partir des documents analysés</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Objectiver les constats et mieux comprendre les logiques de pilotage des établissements.</p>
                 </div>
 
@@ -105,7 +128,13 @@
 <h3><i class="fas fa-exclamation-triangle icon"></i> Repérer les risques et alertes dans une stratégie qualité (ESSMS & EAJE)</h3>
 	                    <p><strong>Description :</strong> Identifier les signaux faibles et analyser les risques dans le cadre d’une démarche qualité pour renforcer la vigilance et déclencher des actions.</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels ayant des missions de démarche qualité, d’évaluation des risques ou de contrôle et d’inspection</p>
-	                    <p><strong>Apport :</strong> Identifier les signaux d’alerte et renforcer la vigilance professionnelle.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>identifier les signaux faibles et les situations à risque</li>
+	                        <li>analyser les risques à partir d’une matrice et d’indicateurs</li>
+	                        <li>hiérarchiser les risques selon leur gravité et leur urgence</li>
+	                        <li>proposer les actions de prévention ou de suivi appropriées</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Structurer une veille active au service du contrôle et de la démarche d’amélioration continue de la qualité.</p>
                 </div>
 
@@ -113,7 +142,13 @@
 <h3><i class="fas fa-book-open icon"></i> Réglementation des EAJE</h3>
 	                    <p><strong>Description:</strong> S’approprier les évolutions réglementaires récentes des EAJE et en mesurer les implications concrètes pour les pratiques de contrôle.</p>
 	                    <p><strong>Pour qui :</strong> Professionnels et cadres des services ayant des missions de contrôle des EAJE.</p>
-	                    <p><strong>Apport :</strong> Appréhender les nouveautés réglementaires et faciliter leur mobilisation dans les pratiques de contrôle.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>identifier les principales évolutions réglementaires applicables aux EAJE</li>
+	                        <li>repérer les obligations ayant un impact sur le fonctionnement de l’établissement</li>
+	                        <li>analyser les écarts entre les exigences réglementaires et les pratiques observées</li>
+	                        <li>formuler des points de vigilance adaptés au contexte de l’établissement</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Actualité réglementaire.</p>
                 </div>
 
@@ -121,7 +156,13 @@
 <h3><i class="fas fa-search icon"></i> Piloter un contrôle</h3>
 	                    <p><strong>Description:</strong> Structurer une stratégie d’analyse des données pour garantir l’objectivité des constats et fiabiliser les rapports.</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels ayant des missions de contrôle ou d’inspection des ESSMS et LVA.</p>
-	                    <p><strong>Apport :</strong> Effectuer une analyse critique des informations et renforcer la qualité des écrits.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>définir les objectifs et les étapes d’un contrôle</li>
+	                        <li>sélectionner les sources et les données nécessaires à l’analyse</li>
+	                        <li>organiser les informations recueillies de manière objective et structurée</li>
+	                        <li>rédiger des constats et des rapports étayés</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Fiabiliser les constats et produire des rapports argumentés, cohérents et exploitables.</p>
                 </div>
 
@@ -129,7 +170,14 @@
 <h3><i class="fas fa-search-plus icon"></i> Contrôler un EAJE</h3>
 		                    <p><strong>Description :</strong> Mettre en œuvre une démarche de contrôle adaptée aux EAJE, du cadre légal à l’observation de terrain.</p>
 		                    <p><strong>Pour qui :</strong> Professionnels et cadres des services ayant des missions de contrôle d’EAJE.</p>
-		                    <p><strong>Apport :</strong> Maîtriser les étapes clés d’un contrôle d’EAJE et adopter une posture adaptée, cohérente avec les enjeux du secteur.</p>
+		                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+		                    <ul class="objectifs-list">
+		                        <li>préparer un contrôle adapté aux spécificités d’un EAJE</li>
+		                        <li>mobiliser les références réglementaires et les outils appropriés</li>
+		                        <li>conduire les différentes étapes du contrôle</li>
+		                        <li>adopter une posture professionnelle adaptée aux situations rencontrées</li>
+		                        <li>formaliser des constats objectifs et exploitables</li>
+		                    </ul>
 		                    <p><strong>Valeur ajoutée :</strong> Conduire un contrôle structuré en tenant compte des spécificités du secteur petite enfance.</p>
 	                </div>
 
@@ -137,13 +185,23 @@
 	                    <h3><i class="fas fa-hand-holding-heart icon"></i> Accompagner au repérage des violences (dont les VEO) et des maltraitances</h3>
 	                    <p><strong>Description :</strong> Repérer et analyser les éléments de preuve lors d'inspection/contrôle, établir des constats et valoriser la bientraitance.</p>
 	                    <p><strong>Pour qui :</strong> Professionnels travaillant dans les domaines de l'enfance, de la petite enfance, des personnes âgées et des personnes en situation de handicap.</p>
-	                    <p><strong>Apport :</strong> Identifier les signaux et renforcer la culture de la bientraitance dans les établissements.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>distinguer violences, violences éducatives ordinaires et maltraitances</li>
+	                        <li>repérer les signes pouvant constituer une alerte</li>
+	                        <li>formaliser des constats factuels</li>
+	                        <li>identifier les suites à donner et les interlocuteurs appropriés</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Objectiver les constats et s'assurer de leur adéquation avec la politique de bientraitance.</p>
 	                </div>
 	            </div>
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn1">Contactez-nous pour toutes questions ou demande de devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-sensibilisations')" aria-controls="section-sensibilisations"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
                     <i class="fas fa-graduation-cap icon"></i>
@@ -164,12 +222,22 @@
         <div class="container">
             <h2 class="section-title" id="les-services-de-formations-immersives"><i class="fas fa-graduation-cap icon"></i> Les services de formations immersives</h2>
             <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-formations-immersives')" aria-controls="section-formations-immersives"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-gavel icon"></i> Mener une enquête administrative (ASSFAM & ASSMAT)</h3>
 	                    <p><strong>Description :</strong> Formation approfondie à la conduite d’enquêtes sur des assistants familiaux et maternels.</p>
 	                    <p><strong>Pour qui:</strong> Cadres et professionnels des services PMI en charge des enquêtes administratives.</p>
-	                    <p><strong>Apport :</strong> Acquérir une méthodologie rigoureuse et développer une posture d’enquêteur éthique et structurée.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>préparer une enquête administrative en définissant son objet et son périmètre</li>
+	                        <li>recueillir les informations utiles auprès des différents interlocuteurs</li>
+	                        <li>analyser et croiser les éléments recueillis</li>
+	                        <li>distinguer les faits établis des déclarations et des hypothèses</li>
+	                        <li>rédiger une conclusion argumentée, objective et conforme au cadre juridique</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Conduire des enquêtes dans le respect du cadre juridique.</p>
                 </div>
 
@@ -177,7 +245,14 @@
 <h3><i class="fas fa-shield-alt icon"></i> Évaluer et maîtriser les risques en EAJE</h3>
 	                    <p><strong>Description :</strong> Identifier, évaluer et gérer des risques spécifiques aux EAJE.</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels en charge du contrôle des EAJE ayant suivi des formations sur le contrôle.</p>
-	                    <p><strong>Apport:</strong> Construire une grille d’analyse des risques et proposer des mesures adaptées.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>identifier les risques spécifiques au fonctionnement d’un EAJE</li>
+	                        <li>évaluer la probabilité et la gravité des risques repérés</li>
+	                        <li>hiérarchiser les risques selon leur niveau de priorité</li>
+	                        <li>construire ou utiliser une grille d’analyse des risques</li>
+	                        <li>proposer des actions de prévention adaptées</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Renforcer la prévention et la gestion des risques dans les EAJE.</p>
                 </div>
 
@@ -185,7 +260,15 @@
 <h3><i class="fas fa-cogs icon"></i> Du cadre réglementaire aux outils : Techniques de contrôle des ESSMS</h3>
 	                    <p><strong>Description :</strong> Mettre en œuvre les techniques de contrôle en articulant cadre réglementaire, posture professionnelle et outils d’investigation (entretiens, observations, recueil de documents).</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels des services ayant des missions de contrôle, d’inspection.</p>
-	                    <p><strong>Apport :</strong> Appliquer les méthodologies de contrôle en les adaptant aux contextes rencontrés.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>relier les exigences réglementaires à leurs cadres d’application</li>
+	                        <li>décrire les étapes d’un contrôle et son cadre réglementaire</li>
+	                        <li>sélectionner les indicateurs et les données à objectiver</li>
+	                        <li>recueillir et croiser les données lors de cas pratiques (Lu, Vu, Entendu)</li>
+	                        <li>adopter la posture du contrôleur (savoir faire et savoir être)</li>
+	                        <li>formaliser des constats conformes au cadre réglementaire</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Renforcer l’efficacité des contrôles et les mobiliser comme leviers d’amélioration continue.</p>
                 </div>
 
@@ -193,23 +276,30 @@
 <h3><i class="fas fa-bolt icon"></i> Du signal à l’action : déclencher un contrôle en urgence (ESSMS & EAJE)</h3>
 	                    <p><strong>Description :</strong> Accompagner à la mise en œuvre rapide d’un contrôle en situation d’urgence, à partir de l’identification et du croisement de signaux d’alerte (ESSMS & EAJE).</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels en responsabilité du déclenchement d’un contrôle.</p>
-	                    <p><strong>Apport :</strong> S’approprier les étapes clés d’un contrôle en urgence, dans un cadre sécurisé et réactif.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>identifier les situations justifiant une veille, une analyse ou un contrôle en urgence</li>
+	                        <li>recueillir rapidement les informations essentielles</li>
+	                        <li>évaluer le niveau de risque et le degré d’urgence</li>
+	                        <li>décider des premières actions à engager</li>
+	                        <li>formaliser une décision et en assurer la traçabilité</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Structurer une réponse rapide et cohérente face à une situation critique</p>
                 </div>
 
-                <div class="solution-card">
-<h3><i class="fas fa-history icon"></i> Structurer un RETEX & soutenir les pratiques (contrôle/enquêtes)</h3>
-	                    <p><strong>Description :</strong> Animation d’une journée de retour d’expérience (RETEX) en se basant sur les contrôles ou enquêtes réalisées par les participants. Dans un cadre méthodologique, formalisé et confidentiel, cette intervention permet d’analyser collectivement les pratiques, d’identifier les marges de progrès et de consolider les acquis professionnels.</p>
-	                    <p><strong>Pour qui :</strong> Équipes ou services ayant conduit des contrôles ou enquêtes et souhaitant capitaliser sur leur expérience et renforcer leurs pratiques.</p>
-	                    <p><strong>Apport :</strong> Analyser la pratique et identifier les leviers d’amélioration.</p>
-	                    <p><strong>Valeur ajoutée :</strong> Transformer l’expérience terrain en ressource collective, renforcer la cohérence des pratiques et soutenir une dynamique d’amélioration continue.</p>
-                </div>
 
                 <div class="solution-card">
 <h3><i class="fas fa-clipboard-list icon"></i> Contrôle des EAJE : structurer une méthodologie adaptée</h3>
 	                    <p><strong>Description :</strong> Mettre en œuvre les techniques de contrôle en articulant cadre réglementaire, posture professionnelle et outils d’investigation (entretiens, observations, recueil de documents).</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels en charge du contrôle des EAJE.</p>
-	                    <p><strong>Apport :</strong> Se doter d’une méthodologie de contrôle des EAJE, en lien avec les nouvelles exigences réglementaires.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>définir une méthodologie de contrôle adaptée aux spécificités des EAJE</li>
+	                        <li>organiser la préparation, la conduite et la restitution du contrôle</li>
+	                        <li>sélectionner les critères et les données utiles au périmètre</li>
+	                        <li>recueillir et croiser les éléments (Lu, Vu, Entendu)</li>
+	                        <li>rédiger des constats structurés et exploitables</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Permet d’adapter les pratiques aux réalités locales et de sécuriser les décisions prises dans le cadre des missions d’autorisation et de contrôle.</p>
                 </div>
 
@@ -217,7 +307,14 @@
 <h3><i class="fas fa-chart-line icon"></i> Stratégie de contrôle – Gérer les événements indésirables graves (ESSMS)</h3>
 		                    <p><strong>Description :</strong> Effectuer une gestion des événements indésirables graves (EIG) en ESSMS et évaluer leurs risques afin de définir une stratégie de contrôle.</p>
 		                    <p><strong>Pour qui :</strong> Responsables et professionnels impliqués dans la gestion des risques et le pilotage des contrôles des ESSMS.</p>
-		                    <p><strong>Apport :</strong> Comprendre les enjeux liés aux événements indésirables graves et structurer une stratégie de contrôle adaptée.</p>
+		                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+		                    <ul class="objectifs-list">
+		                        <li>identifier les caractéristiques réglementaires d’un événement indésirable grave</li>
+		                        <li>organiser le recueil et la vérification des informations</li>
+		                        <li>évaluer les risques immédiats</li>
+		                        <li>définir les priorités d’intervention et de contrôle</li>
+		                        <li>assurer la traçabilité des décisions et des suites données</li>
+		                    </ul>
 		                    <p><strong>Valeur ajoutée :</strong> Outiller les responsables pour analyser, documenter et prévenir les événements graves.</p>
 	                </div>
 
@@ -225,13 +322,24 @@
 	                    <h3><i class="fas fa-lightbulb icon"></i> Penser les suites d’un contrôle</h3>
 	                    <p><strong>Description :</strong> Accompagner les équipes dans l’analyse des constats et la définition d’un plan d’action post-contrôle. L’objectif est de transformer les recommandations en leviers d’amélioration continue et de sécuriser la mise en œuvre des suites données au contrôle.</p>
 	                    <p><strong>Pour qui :</strong> Cadres et professionnels en charge du suivi des contrôles et de la mise en œuvre des plans d’action.</p>
-	                    <p><strong>Apport :</strong> Maîtriser la méthodologie de construction d’un plan d’action post-contrôle et de son suivi.</p>
+	                    <p><strong>Objectifs opérationnels :</strong> à l’issue de la formation, vous serez en mesure de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>analyser les données et les constats issus d’un contrôle</li>
+	                        <li>distinguer les écarts, les remarques, les risques et les priorités d’action</li>
+	                        <li>définir des suites proportionnées et adaptées</li>
+	                        <li>construire un plan d’action en lien avec les outils EIG et risques</li>
+	                        <li>organiser le suivi de la mise en œuvre des mesures correctives</li>
+	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Sécuriser la mise en œuvre des suites données au contrôle et transformer les constats en leviers d’amélioration continue.</p>
 	                </div>
             </div>
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn2">Contactez-nous pour organiser une intervention et demander un devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-formations-immersives')" aria-controls="section-formations-immersives"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
                     <i class="fas fa-chalkboard-teacher icon"></i>
@@ -251,6 +359,9 @@
     <section class="section" id="section-accompagnements" style="display:none;">
         <div class="container">
             <h2 class="section-title" id="les-accompagnements"><i class="fas fa-handshake icon"></i> Les accompagnements</h2>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
                     <h3><i class="fas fa-calendar-alt icon"></i> Supervision technique sur 6 mois</h3>
@@ -277,6 +388,21 @@
                 </div>
 
                 <div class="solution-card">
+<h3><i class="fas fa-history icon"></i> Structurer un RETEX & soutenir les pratiques (contrôle/enquêtes)</h3>
+	                    <p><strong>Description :</strong> Animation d’une journée de retour d’expérience (RETEX) en se basant sur les contrôles ou enquêtes réalisées par les participants. Dans un cadre méthodologique, formalisé et confidentiel, cette intervention permet d’analyser collectivement les pratiques, d’identifier les marges de progrès et de consolider les acquis professionnels.</p>
+	                    <p><strong>Pour qui :</strong> Équipes ou services ayant conduit des contrôles ou enquêtes et souhaitant capitaliser sur leur expérience et renforcer leurs pratiques.</p>
+	                    <p><strong>Objectifs :</strong> cette intervention permet de :</p>
+	                    <ul class="objectifs-list">
+	                        <li>organiser un retour d’expérience à partir d’une situation réelle</li>
+	                        <li>identifier les réussites, les difficultés et les écarts rencontrés</li>
+	                        <li>analyser les causes et les facteurs contributifs</li>
+	                        <li>faire émerger des pistes d’amélioration collectives</li>
+	                        <li>formaliser un plan d’action ou des recommandations opérationnelles</li>
+	                    </ul>
+	                    <p><strong>Valeur ajoutée :</strong> Transformer l’expérience terrain en ressource collective, renforcer la cohérence des pratiques et soutenir une dynamique d’amélioration continue.</p>
+                </div>
+
+                <div class="solution-card">
                     <h3><i class="fas fa-sitemap icon"></i> Structuration interne</h3>
                     <p><strong>Description :</strong> Accompagnement complet sur mesure, adapté aux singularités de votre organisation. Nous proposons une analyse des besoins et une analyse des contraintes afin de présenter différents scénarios de structurations. L'expert en charge s'assurera du caractère opérationnel de l'organisation à définir et de la structuration d'une culture commune. (Sur une base journalière d'intervention, adaptée aux besoins.)</p>
                     <p><strong>Pour qui :</strong> Pour les dirigeants et cadres souhaitant structurer l'activité de contrôle et de qualité au sein de leurs services</p>
@@ -297,6 +423,10 @@
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn3">Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
                     <i class="fas fa-chalkboard-teacher icon"></i>
@@ -312,13 +442,59 @@
         </div>
     </section>
 
-    <!-- Besoins spécifiques / Prise de rendez-vous Section -->
-    <section class="section bg-light">
+    <!-- Démarche : 3 étapes + fiches pratiques -->
+    <section class="section bg-light" id="modalites-pedagogiques">
         <div class="container">
-            <div class="rdv-callout">
-                <h2 class="section-title"><i class="fas fa-calendar-check icon"></i> Vous avez des besoins spécifiques ?</h2>
-                <p>Nous vous offrons un échange téléphonique ou une visio de 30 minutes pour échanger sur vos besoins.</p>
-                <button type="button" class="btn-primary" id="openRdvModalBtn">Prendre un rendez-vous</button>
+            <h2 class="section-title"><i class="fas fa-route icon"></i> Notre démarche</h2>
+            <p class="pedago-intro">Pour vos agents comme pour vos organisations, chaque action est construite avec vous, de l'analyse de vos besoins à l'évaluation des résultats.</p>
+
+            <div class="pedago-cards-grid">
+
+                <div class="pedago-card">
+                    <span class="pedago-card-num" aria-hidden="true">1</span>
+                    <h3>Analyser vos besoins</h3>
+                    <p>Chaque action débute par un échange pour définir avec vous l'objectif, le périmètre, le public, le lieu et les dates.</p>
+                    <button type="button" class="btn-primary" id="openBesoinsPrerequisBtn">Vos besoins et prérequis</button>
+                </div>
+
+                <div class="pedago-card pedago-card-centre">
+                    <span class="pedago-card-num" aria-hidden="true">2</span>
+                    <h3>Une méthode active et opérationnelle</h3>
+                    <p>Pour vos agents : cas pratiques, mises en situation et travaux de groupe. Pour vos directions : conseil, analyses, appui à la rédaction de vos process et de vos outils de pilotage.</p>
+                    <button type="button" class="btn-primary" id="openMethodesPedagogiquesBtn">Nos méthodes pédagogiques</button>
+                </div>
+
+                <div class="pedago-card">
+                    <span class="pedago-card-num" aria-hidden="true">3</span>
+                    <h3>Échanger avec nous</h3>
+                    <p>Un échange téléphonique ou une visio de 30 minutes pour parler de vos besoins.</p>
+                    <button type="button" class="btn-primary" id="openRdvModalBtn">Prendre un rendez-vous</button>
+                </div>
+
+            </div>
+
+            <div class="pedago-pratique">
+                <h3>En pratique : formations et sensibilisations</h3>
+                <ul class="pedago-pratique-grid">
+                    <li><i class="fas fa-clock icon" aria-hidden="true"></i><div><strong>Durée</strong><span>De 1 jour (sensibilisations) à 3 jours (formations immersives).</span></div></li>
+                    <li><i class="fas fa-users icon" aria-hidden="true"></i><div><strong>Public et prérequis</strong><span>Cadres et professionnels en charge du contrôle, de l'inspection ou des enquêtes administratives (public précisé sur chaque fiche). Les prérequis sont définis pour chaque action avec le commanditaire, selon le niveau des participants et sa demande.</span></div></li>
+                    <li><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i><div><strong>Lieu</strong><span>Sur site chez le commanditaire, en visio ou en format hybride, sur demande.</span></div></li>
+                    <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Les dates sont fixées avec le commanditaire. Après la signature du marché ou du devis, l'action est conçue sur mesure et organisée à ces dates.</span></div></li>
+                    <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon l'analyse des besoins, la taille du groupe et le format (sensibilisation ou formation).</span></div></li>
+                    <li><i class="fas fa-universal-access icon" aria-hidden="true"></i><div><strong>Accessibilité</strong><span>Référente handicap : Mathilde Théry (<a href="mailto:contact@risomes.fr">contact@risomes.fr</a>). Elle vérifie en amont de chaque intervention les conditions de mise en œuvre et l'accessibilité des locaux, et adapte si besoin les modalités pédagogiques.</span></div></li>
+                </ul>
+            </div>
+
+            <div class="pedago-pratique">
+                <h3>En pratique : accompagnement et conseil</h3>
+                <ul class="pedago-pratique-grid">
+                    <li><i class="fas fa-hourglass-half icon" aria-hidden="true"></i><div><strong>Format et durée</strong><span>Sur mesure, du conseil ponctuel à l'accompagnement sur 3 mois, 6 mois ou 1 an, ou sur une base journalière.</span></div></li>
+                    <li><i class="fas fa-user-tie icon" aria-hidden="true"></i><div><strong>Public</strong><span>Dirigeants, cadres et responsables de services des collectivités et des établissements.</span></div></li>
+                    <li><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i><div><strong>Lieu</strong><span>À distance, ou sur site pour certains temps d'accompagnement (frais de déplacement non compris).</span></div></li>
+                    <li><i class="fas fa-tasks icon" aria-hidden="true"></i><div><strong>Livrables</strong><span>Selon la mission : analyses, scénarios de structuration, process, tableaux de bord et outils de pilotage.</span></div></li>
+                    <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Dates fixées avec vous. L'accompagnement démarre après la signature du marché ou du devis.</span></div></li>
+                    <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon la mission : sur une base journalière, ou à l'heure pour le conseil par questions.</span></div></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -358,6 +534,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Nos méthodes pédagogiques -->
+    <div id="methodesPedagogiquesModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button type="button" class="close" aria-label="Fermer">&times;</button>
+            <h3>Une approche active, participative et expérientielle</h3>
+            <div class="modal-body">
+                <p>Nous privilégions une pédagogie active et participative, alternant :</p>
+                <ul>
+                    <li>des apports théoriques ciblés</li>
+                    <li>des mises en situation et des cas pratiques</li>
+                    <li>des temps d'échange et de réflexion collective</li>
+                    <li>des travaux de groupe</li>
+                    <li>des activités de découverte et d'expérimentation</li>
+                    <li>des exposés interactifs favorisant la participation de chacun</li>
+                </ul>
+                <p>L'objectif est de favoriser l'appropriation des connaissances avec des temps de formations adaptés pour une mise en application concrète dans les pratiques professionnelles.</p>
+                <p><strong>Évaluations</strong><br>
+                L'acquisition des compétences est évaluée tout au long de la formation, au moyen de QCM, de quiz, de mises en situation, de cas pratiques et de questionnaires de positionnement. Chaque formation se conclut par un quiz final ainsi qu'une évaluation de la satisfaction des participants.</p>
+                <p>Selon les contenus, les acquis peuvent également être évalués à partir :</p>
+                <ul>
+                    <li>d'un quiz ou d'un questionnaire de positionnement ;</li>
+                    <li>d'une étude de cas ;</li>
+                    <li>d'une mise en situation ;</li>
+                    <li>d'une grille d'observation ;</li>
+                    <li>d'un exercice individuel ou collectif ;</li>
+                    <li>de la qualité des productions réalisées ;</li>
+                    <li>d'un questionnaire d'évaluation à chaud ou à froid.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Vos besoins et prérequis -->
+    <div id="besoinsPrerequisModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button type="button" class="close" aria-label="Fermer">&times;</button>
+            <h3>Une analyse des besoins</h3>
+            <div class="modal-body">
+                <p>Chaque action débute par une analyse de vos besoins afin de construire une formation ou un accompagnement réellement adapté à votre contexte, à vos enjeux et à vos objectifs.</p>
+                <p>Nos interventions peuvent être proposées en présentiel ou à distance, en format synchrone ou asynchrone, selon vos contraintes et vos attentes.</p>
+                <p>Les prérequis sont définis pour chaque action avec le commanditaire, selon le niveau des participants, le public à intégrer et l'objectif de la demande.</p>
+                <p>La durée des formations est étudiée en fonction de vos besoins et peut aller d'1 jour (sensibilisation) à 3 jours (formations immersives).</p>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Modal Prise de rendez-vous -->
     <div id="rdvModal" class="modal" role="dialog" aria-modal="true">
@@ -409,10 +632,10 @@
             <h3>Conditions Générales de Vente (CGV)</h3>
             <div class="modal-body">
                 <h4>Société</h4>
-                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le Médico-Social</strong><br>
+                <p><strong>RISOMES – Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social</strong><br>
                 Forme juridique : Société par Actions Simplifiée (SAS)<br>
                 Capital social : 5 000 €<br>
-                Siège social : Coublevie<br>
+                Siège social : 38500 Coublevie<br>
                 SIREN : 988 870 473 – RCS Grenoble<br>
                 Numéro APE : 7022Z. Cet enregistrement ne vaut pas agrément de l'État.<br>
                 OF enregistrée sous le numéro 84381099938</p>
@@ -495,7 +718,7 @@
             Société par Actions Simplifiée au capital de 5 000 €<br>
             Siège social : 38500 Coublevie<br>
             SIREN : 988 870 473 – RCS Grenoble<br>
-            Numéro APE : 70.22Z</p>
+            Numéro APE : 7022Z</p>
             <p>Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
             <h4>Édition du site</h4>
             <p>Le présent site est édité par la SAS RISOMES.</p>
@@ -521,9 +744,9 @@
                 <h4>Mentions légales</h4>
                 <p><strong>Réponses Innovantes Solutions Opérationnelles dans le MEdico-Social - RISOMES</strong><br>
                 Société par Actions Simplifiée au capital de 5.000 €<br>
-                Siège social : 38500 COUBLEVIE<br>
+                Siège social : 38500 Coublevie<br>
                 SIREN 988 870 473 RCS GRENOBLE<br>
-                Numéro APE : 70.22Z</p>
+                Numéro APE : 7022Z</p>
                 <h4>1. Préambule</h4>
                 <p>La présente politique de confidentialité a pour but d'informer les utilisateurs du site sur la manière dont sont collectées leurs données personnelles et sur les droits dont ils disposent concernant ces données.</p>
                 <h4>2. Données collectées</h4>
@@ -603,13 +826,36 @@
                     <label for="sensibilisation1">Sensibilisation qui vous intéresse</label>
                     <select id="sensibilisation1" name="sensibilisation">
                         <option value="">Sélectionnez une sensibilisation</option>
-                        <option value="Recueil de la parole des usagers">Recueil de la parole des usagers</option>
-                        <option value="Tarification et CPOM">Tarification et CPOM</option>
-                        <option value="Repérer les risques et alertes dans une stratégie qualité">Repérer les risques et alertes dans une stratégie qualité</option>
+                        <option value="Recueillir la parole des usagers — Entre démarche éthique et réglementation">Recueillir la parole des usagers — Entre démarche éthique et réglementation</option>
+                        <option value="Lecture stratégique du CPOM, des factures et de l’organisation financière lors d’un contrôle">Lecture stratégique du CPOM, des factures et de l’organisation financière lors d’un contrôle</option>
+                        <option value="Repérer les risques et alertes dans une stratégie qualité (ESSMS &amp; EAJE)">Repérer les risques et alertes dans une stratégie qualité (ESSMS & EAJE)</option>
                         <option value="Réglementation des EAJE">Réglementation des EAJE</option>
-                        <option value="Contrôler un ESSMS">Contrôler un ESSMS</option>
+                        <option value="Piloter un contrôle">Piloter un contrôle</option>
                         <option value="Contrôler un EAJE">Contrôler un EAJE</option>
+                        <option value="Accompagner au repérage des violences (dont les VEO) et des maltraitances">Accompagner au repérage des violences (dont les VEO) et des maltraitances</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="participants1">Nombre de participants estimé</label>
+                    <input type="number" id="participants1" name="participants" min="1" max="50">
+                </div>
+                <div class="form-group">
+                    <label for="format1">Format souhaité</label>
+                    <select id="format1" name="format">
+                        <option value="">À définir ensemble</option>
+                        <option value="Sur site chez le commanditaire">Sur site chez le commanditaire</option>
+                        <option value="En visio">En visio</option>
+                        <option value="Hybride">Hybride</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dates1">Période ou dates souhaitées</label>
+                    <input type="text" id="dates1" name="dates" placeholder="Ex : novembre 2026">
+                </div>
+                <div class="form-group">
+                    <label for="access1">Besoins d'accessibilité ou d'adaptation à anticiper (facultatif)</label>
+                    <textarea id="access1" name="accessibilite" rows="2" aria-describedby="access-hint1"></textarea>
+                    <p class="form-hint" id="access-hint1">Ne communiquez pas d'informations médicales : notre référente handicap vous recontactera.</p>
                 </div>
                 <div class="form-group">
                     <label for="message1">Message</label>
@@ -670,13 +916,13 @@
                     <label for="formation2">Formation qui vous intéresse</label>
                     <select id="formation2" name="formation">
                         <option value="">Sélectionnez une formation</option>
-                        <option value="Mener une enquête administrative (ASSMAT & ASSFAM)">Mener une enquête administrative (ASSMAT & ASSFAM)</option>
+                        <option value="Mener une enquête administrative (ASSFAM &amp; ASSMAT)">Mener une enquête administrative (ASSFAM & ASSMAT)</option>
                         <option value="Évaluer et maîtriser les risques en EAJE">Évaluer et maîtriser les risques en EAJE</option>
-                        <option value="Le contrôle, outil au service de la qualité">Le contrôle, outil au service de la qualité</option>
-                        <option value="Déclenchement d'un contrôle en urgence">Déclenchement d'un contrôle en urgence</option>
-                        <option value="Réaliser un RETEX & soutenir les pratiques">Réaliser un RETEX & soutenir les pratiques</option>
-                        <option value="Accompagnement méthodologique autorisation & contrôle EAJE">Accompagnement méthodologique autorisation & contrôle EAJE</option>
-                        <option value="Stratégie de contrôle - Gestion des événements indésirables graves">Stratégie de contrôle - Gestion des événements indésirables graves</option>
+                        <option value="Du cadre réglementaire aux outils : Techniques de contrôle des ESSMS">Du cadre réglementaire aux outils : Techniques de contrôle des ESSMS</option>
+                        <option value="Du signal à l’action : déclencher un contrôle en urgence (ESSMS &amp; EAJE)">Du signal à l’action : déclencher un contrôle en urgence (ESSMS & EAJE)</option>
+                        <option value="Contrôle des EAJE : structurer une méthodologie adaptée">Contrôle des EAJE : structurer une méthodologie adaptée</option>
+                        <option value="Stratégie de contrôle – Gérer les événements indésirables graves (ESSMS)">Stratégie de contrôle – Gérer les événements indésirables graves (ESSMS)</option>
+                        <option value="Penser les suites d’un contrôle">Penser les suites d’un contrôle</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -686,6 +932,20 @@
                 <div class="form-group">
                     <label for="dates2">Dates souhaitées</label>
                     <input type="text" id="dates2" name="dates" placeholder="Ex: Semaine du 15 mars 2027">
+                </div>
+                <div class="form-group">
+                    <label for="format2">Format souhaité</label>
+                    <select id="format2" name="format">
+                        <option value="">À définir ensemble</option>
+                        <option value="Sur site chez le commanditaire">Sur site chez le commanditaire</option>
+                        <option value="En visio">En visio</option>
+                        <option value="Hybride">Hybride</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="access2">Besoins d'accessibilité ou d'adaptation à anticiper (facultatif)</label>
+                    <textarea id="access2" name="accessibilite" rows="2" aria-describedby="access-hint2"></textarea>
+                    <p class="form-hint" id="access-hint2">Ne communiquez pas d'informations médicales : notre référente handicap vous recontactera.</p>
                 </div>
                 <div class="form-group">
                     <label for="message2">Message</label>
@@ -750,8 +1010,9 @@
                         <option value="Accompagnement 3 mois">Accompagnement 3 mois</option>
                         <option value="Accompagnement 6 mois">Accompagnement 6 mois</option>
                         <option value="Accompagnement sur 1 an">Accompagnement sur 1 an</option>
+                        <option value="Structurer un RETEX &amp; soutenir les pratiques (contrôle/enquêtes)">Structurer un RETEX & soutenir les pratiques (contrôle/enquêtes)</option>
                         <option value="Structuration interne">Structuration interne</option>
-                        <option value="Accompagnement à la définition des besoins des outils de pilotage">Accompagnement à la définition des besoins des outils de pilotage</option>
+                        <option value="Accompagnement à la définition des besoins des outils de pilotage et ou de suivis">Accompagnement à la définition des besoins des outils de pilotage et ou de suivis</option>
                         <option value="SAV conseils par questions">SAV conseils par questions</option>
                     </select>
                 </div>
