@@ -302,17 +302,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements"
+    const solutionSectionIds = ["section-sensibilisations", "section-formations-immersives", "section-accompagnements"];
+    const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const scrollBehavior = prefersReducedMotion ? "auto" : "smooth";
+
+    function setSolutionSection(sectionId, open) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+        section.style.display = open ? "block" : "none";
+        document.querySelectorAll('[aria-controls="' + sectionId + '"]').forEach(function(btn) {
+            btn.setAttribute("aria-expanded", String(open));
+            btn.classList.toggle("active", open);
+        });
+    }
+
+    // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements" :
+    // un seul bloc ouvert à la fois. Cliquer sur un autre bloc referme le précédent.
     window.toggleSolutionSection = function(sectionId) {
         const section = document.getElementById(sectionId);
         if (!section) return;
-        const isOpen = section.style.display !== "none";
-        section.style.display = isOpen ? "none" : "block";
-        document.querySelectorAll('[aria-controls="' + sectionId + '"]').forEach(function(btn) {
-            btn.setAttribute("aria-expanded", String(!isOpen));
-            btn.classList.toggle("active", !isOpen);
+        if (section.style.display !== "none") {
+            window.closeSolutionSection(sectionId);
+            return;
+        }
+        solutionSectionIds.forEach(function(id) {
+            if (id !== sectionId) setSolutionSection(id, false);
         });
-        if (!isOpen) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        setSolutionSection(sectionId, true);
+        section.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+    };
+
+    // Replie un bloc et ramène l'utilisateur sur les trois grands blocs du haut
+    window.closeSolutionSection = function(sectionId) {
+        setSolutionSection(sectionId, false);
+        const topGrid = document.querySelector(".solutions-nav-grid:not(.solutions-nav-grid-small)");
+        if (topGrid) {
+            topGrid.scrollIntoView({ behavior: scrollBehavior, block: "center" });
+            const topBtn = topGrid.querySelector('[aria-controls="' + sectionId + '"]');
+            if (topBtn) topBtn.focus({ preventScroll: true });
         }
     };
 

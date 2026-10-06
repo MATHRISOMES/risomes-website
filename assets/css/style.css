@@ -1611,6 +1611,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
     }
 }
 
+/* Variante compacte (renvois en bas de section) */
 .solutions-nav-card {
     display: flex;
     align-items: center;
@@ -1627,6 +1628,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     transition: all 0.2s ease;
+    text-align: left;
 }
 
 .solutions-nav-card:hover {
@@ -1639,7 +1641,7 @@ Utilise les variables CSS existantes — aucune couleur en dur
     font-size: 1.2rem;
 }
 
-.solutions-nav-card span {
+.solutions-nav-card > span:not([class]) {
     flex: 1;
     text-align: left;
 }
@@ -1655,6 +1657,119 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 .solutions-nav-card.active {
     border-color: var(--primary-color);
+}
+
+/* Trois grands blocs d'entrée (en haut de page) : bleu de la charte, public visé */
+.solutions-nav-grid:not(.solutions-nav-grid-small) {
+    gap: 1.5rem;
+    scroll-margin-top: 100px;
+}
+
+.solutions-nav-grid:not(.solutions-nav-grid-small) .solutions-nav-card {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-bottom: 5px solid var(--secondary-color);
+    padding: 1.75rem 1.5rem;
+    gap: 1.1rem;
+    min-height: 150px;
+    box-shadow: var(--shadow);
+}
+
+.solutions-nav-grid:not(.solutions-nav-grid-small) .solutions-nav-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+.solutions-nav-grid:not(.solutions-nav-grid-small) .solutions-nav-card.active {
+    background: #2d4d57;
+}
+
+.nav-card-icon {
+    flex: 0 0 3.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+.nav-card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.nav-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.nav-card-desc {
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #e8eef0;
+}
+
+.solutions-nav-grid:not(.solutions-nav-grid-small) .nav-chevron {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.solutions-nav-grid:not(.solutions-nav-grid-small) .solutions-nav-card:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+/* Repli des sections dépliées */
+section[id^="section-"] {
+    scroll-margin-top: 90px;
+}
+
+.solutions-fold {
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+.btn-fold {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-fold:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-fold:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+.solutions-voir-aussi {
+    text-align: center;
+    margin: 2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted-accessible);
+}
+
+.solutions-voir-aussi + .solutions-nav-grid-small {
+    margin-top: 0.75rem;
 }
 
 /* Encart de prise de rendez-vous */
@@ -1690,8 +1805,8 @@ Utilise les variables CSS existantes — aucune couleur en dur
 
 /* ============================================================
    Modalités pédagogiques : 3 cartes numérotées + fiche pratique
-   Charte : #385F6B (bleu) aux extrémités, #F49F0A (orange) au centre
-   Contrastes : blanc sur #385F6B = 7:1 ; #2d3748 sur #F49F0A = 5,6:1
+   Charte : filet #385F6B (bleu) aux extrémités, #F49F0A (orange) au centre, fonds clairs
+   Contrastes : texte #2d3748 sur blanc et sur #fffaf0 > 10:1 ; blanc sur #385F6B = 7:1
    ============================================================ */
 .pedago-intro {
     text-align: center;
@@ -1714,6 +1829,10 @@ Utilise les variables CSS existantes — aucune couleur en dur
 }
 
 .pedago-card {
+    background: var(--white);
+    color: var(--text-dark);
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid var(--primary-color);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 2rem 1.75rem;
@@ -1722,13 +1841,11 @@ Utilise les variables CSS existantes — aucune couleur en dur
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    background: var(--primary-color);
-    color: var(--white);
 }
 
 .pedago-card-centre {
-    background: var(--secondary-color);
-    color: var(--text-dark);
+    background: #fffaf0;
+    border-top-color: var(--secondary-color);
 }
 
 .pedago-card-num {
@@ -1740,36 +1857,35 @@ Utilise les variables CSS existantes — aucune couleur en dur
     justify-content: center;
     font-weight: 700;
     font-size: 1.1rem;
-    background: var(--secondary-color);
-    color: var(--text-dark);
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 .pedago-card-centre .pedago-card-num {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--secondary-color);
+    color: var(--text-dark);
 }
 
 .pedago-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
-    color: inherit;
+    color: var(--primary-color);
 }
 
 .pedago-card p {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
-    color: inherit;
+    color: var(--text-dark);
     flex: 1;
 }
 
-.pedago-card .btn-light,
 .pedago-card .btn-primary {
     margin-top: auto;
 }
 
-/* Boutons des cartes : même police que le site, lisibles sur chaque fond */
+/* Boutons : même police que le site */
 .btn-primary,
 .btn-secondary,
 .btn-light {
@@ -1794,23 +1910,18 @@ Utilise les variables CSS existantes — aucune couleur en dur
     box-shadow: var(--shadow);
 }
 
-.pedago-card-centre .btn-primary:hover {
-    background: var(--text-dark);
-}
-
-.pedago-card .btn-light:focus-visible {
+.pedago-card .btn-primary:focus-visible {
     outline: 3px solid var(--secondary-color);
-    outline-offset: 3px;
-}
-
-.pedago-card-centre .btn-primary:focus-visible {
-    outline: 3px solid var(--text-dark);
     outline-offset: 3px;
 }
 
 /* Fiche pratique : durée, public, lieu, dates, tarif, accessibilité */
 .pedago-pratique {
     margin-top: 2.5rem;
+}
+
+.pedago-pratique + .pedago-pratique {
+    margin-top: 2rem;
 }
 
 .pedago-pratique h3 {

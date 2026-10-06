@@ -60,18 +60,27 @@
         <div class="container">
             <div class="solutions-nav-grid">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
-                    <i class="fas fa-chalkboard-teacher icon"></i>
-                    <span>Les sensibilisations</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-chalkboard-teacher"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les sensibilisations</span>
+                        <span class="nav-card-desc">Pour vos agents : une journée pour acquérir les repères essentiels.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
-                    <i class="fas fa-graduation-cap icon"></i>
-                    <span>Les formations immersives</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les formations immersives</span>
+                        <span class="nav-card-desc">Pour vos agents : jusqu'à 3 jours de cas pratiques et de mises en situation.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-accompagnements')" aria-expanded="false" aria-controls="section-accompagnements">
-                    <i class="fas fa-handshake icon"></i>
-                    <span>Les accompagnements et services</span>
+                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-handshake"></i></span>
+                    <span class="nav-card-text">
+                        <span class="nav-card-title">Les accompagnements et services</span>
+                        <span class="nav-card-desc">Pour vos directions et vos services : conseil, analyses, process et outils de pilotage.</span>
+                    </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
             </div>
@@ -83,6 +92,9 @@
         <div class="container">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher icon"></i> Les sensibilisations</h2>
             <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-sensibilisations')" aria-controls="section-sensibilisations"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-comments icon"></i> Recueillir la parole des usagers — Entre démarche éthique et réglementation</h3>
@@ -186,6 +198,10 @@
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn1">Contactez-nous pour toutes questions ou demande de devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-sensibilisations')" aria-controls="section-sensibilisations"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
                     <i class="fas fa-graduation-cap icon"></i>
@@ -206,6 +222,9 @@
         <div class="container">
             <h2 class="section-title" id="les-services-de-formations-immersives"><i class="fas fa-graduation-cap icon"></i> Les services de formations immersives</h2>
             <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-formations-immersives')" aria-controls="section-formations-immersives"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
 <h3><i class="fas fa-gavel icon"></i> Mener une enquête administrative (ASSFAM & ASSMAT)</h3>
@@ -317,6 +336,10 @@
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn2">Contactez-nous pour organiser une intervention et demander un devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-formations-immersives')" aria-controls="section-formations-immersives"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
                     <i class="fas fa-chalkboard-teacher icon"></i>
@@ -336,6 +359,9 @@
     <section class="section" id="section-accompagnements" style="display:none;">
         <div class="container">
             <h2 class="section-title" id="les-accompagnements"><i class="fas fa-handshake icon"></i> Les accompagnements</h2>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
             <div class="solutions-grid">
                 <div class="solution-card">
                     <h3><i class="fas fa-calendar-alt icon"></i> Supervision technique sur 6 mois</h3>
@@ -397,6 +423,10 @@
             <div class="cta-section">
                 <button class="btn-primary" id="openContactModalBtn3">Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</button>
             </div>
+            <div class="solutions-fold">
+                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+            </div>
+            <p class="solutions-voir-aussi">Voir aussi</p>
             <div class="solutions-nav-grid solutions-nav-grid-small">
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
                     <i class="fas fa-chalkboard-teacher icon"></i>
@@ -412,25 +442,25 @@
         </div>
     </section>
 
-    <!-- Modalités pédagogiques : 3 étapes + fiche pratique -->
+    <!-- Démarche : 3 étapes + fiches pratiques -->
     <section class="section bg-light" id="modalites-pedagogiques">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-route icon"></i> Nos modalités pédagogiques</h2>
-            <p class="pedago-intro">De l'analyse de vos besoins à l'évaluation des acquis, chaque action est construite avec vous.</p>
+            <h2 class="section-title"><i class="fas fa-route icon"></i> Notre démarche</h2>
+            <p class="pedago-intro">Pour vos agents comme pour vos organisations, chaque action est construite avec vous, de l'analyse de vos besoins à l'évaluation des résultats.</p>
 
             <div class="pedago-cards-grid">
 
                 <div class="pedago-card">
                     <span class="pedago-card-num" aria-hidden="true">1</span>
                     <h3>Analyser vos besoins</h3>
-                    <p>Chaque action débute par un échange pour adapter la durée, le public, le lieu et les dates à votre contexte.</p>
-                    <button type="button" class="btn-light" id="openBesoinsPrerequisBtn">Vos besoins et prérequis</button>
+                    <p>Chaque action débute par un échange pour définir avec vous l'objectif, le périmètre, le public, le lieu et les dates.</p>
+                    <button type="button" class="btn-primary" id="openBesoinsPrerequisBtn">Vos besoins et prérequis</button>
                 </div>
 
                 <div class="pedago-card pedago-card-centre">
                     <span class="pedago-card-num" aria-hidden="true">2</span>
-                    <h3>Une pédagogie active</h3>
-                    <p>Cas pratiques, mises en situation et travaux de groupe pour mettre en application dès la formation.</p>
+                    <h3>Une méthode active et opérationnelle</h3>
+                    <p>Pour vos agents : cas pratiques, mises en situation et travaux de groupe. Pour vos directions : conseil, analyses, appui à la rédaction de vos process et de vos outils de pilotage.</p>
                     <button type="button" class="btn-primary" id="openMethodesPedagogiquesBtn">Nos méthodes pédagogiques</button>
                 </div>
 
@@ -438,13 +468,13 @@
                     <span class="pedago-card-num" aria-hidden="true">3</span>
                     <h3>Échanger avec nous</h3>
                     <p>Un échange téléphonique ou une visio de 30 minutes pour parler de vos besoins.</p>
-                    <button type="button" class="btn-light" id="openRdvModalBtn">Prendre un rendez-vous</button>
+                    <button type="button" class="btn-primary" id="openRdvModalBtn">Prendre un rendez-vous</button>
                 </div>
 
             </div>
 
             <div class="pedago-pratique">
-                <h3>En pratique</h3>
+                <h3>En pratique : formations et sensibilisations</h3>
                 <ul class="pedago-pratique-grid">
                     <li><i class="fas fa-clock icon" aria-hidden="true"></i><div><strong>Durée</strong><span>De 1 jour (sensibilisations) à 3 jours (formations immersives).</span></div></li>
                     <li><i class="fas fa-users icon" aria-hidden="true"></i><div><strong>Public et prérequis</strong><span>Cadres et professionnels en charge du contrôle, de l'inspection ou des enquêtes administratives (public précisé sur chaque fiche). Les prérequis sont définis pour chaque action avec le commanditaire, selon le niveau des participants et sa demande.</span></div></li>
@@ -452,6 +482,18 @@
                     <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Les dates sont fixées avec le commanditaire. Après la signature du marché ou du devis, l'action est conçue sur mesure et organisée à ces dates.</span></div></li>
                     <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon l'analyse des besoins, la taille du groupe et le format (sensibilisation ou formation).</span></div></li>
                     <li><i class="fas fa-universal-access icon" aria-hidden="true"></i><div><strong>Accessibilité</strong><span>Référente handicap : Mathilde Théry (<a href="mailto:contact@risomes.fr">contact@risomes.fr</a>). Elle vérifie en amont de chaque intervention les conditions de mise en œuvre et l'accessibilité des locaux, et adapte si besoin les modalités pédagogiques.</span></div></li>
+                </ul>
+            </div>
+
+            <div class="pedago-pratique">
+                <h3>En pratique : accompagnement et conseil</h3>
+                <ul class="pedago-pratique-grid">
+                    <li><i class="fas fa-hourglass-half icon" aria-hidden="true"></i><div><strong>Format et durée</strong><span>Sur mesure, du conseil ponctuel à l'accompagnement sur 3 mois, 6 mois ou 1 an, ou sur une base journalière.</span></div></li>
+                    <li><i class="fas fa-user-tie icon" aria-hidden="true"></i><div><strong>Public</strong><span>Dirigeants, cadres et responsables de services des collectivités et des établissements.</span></div></li>
+                    <li><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i><div><strong>Lieu</strong><span>À distance, ou sur site pour certains temps d'accompagnement (frais de déplacement non compris).</span></div></li>
+                    <li><i class="fas fa-tasks icon" aria-hidden="true"></i><div><strong>Livrables</strong><span>Selon la mission : analyses, scénarios de structuration, process, tableaux de bord et outils de pilotage.</span></div></li>
+                    <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Dates fixées avec vous. L'accompagnement démarre après la signature du marché ou du devis.</span></div></li>
+                    <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon la mission : sur une base journalière, ou à l'heure pour le conseil par questions.</span></div></li>
                 </ul>
             </div>
         </div>
