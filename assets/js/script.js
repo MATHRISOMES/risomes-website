@@ -1,5 +1,65 @@
 // Navigation sur mobile
 document.addEventListener("DOMContentLoaded", function() {
+
+    // Masquage initial des blocs dépliables (Nos solutions) — fait ici en JS
+    // uniquement, jamais en dur dans le HTML, pour que le contenu reste
+    // consultable si JavaScript est indisponible (RGAA 7.2 / WCAG 4.1.2).
+    ["section-sensibilisations", "section-formations-immersives", "section-accompagnements"].forEach(function(id) {
+        const section = document.getElementById(id);
+        if (section) section.style.display = "none";
+    });
+
+    // Piège de focus + restauration du focus pour toutes les modales du site
+    // (accessibilité clavier : le focus reste dans la boîte tant qu'elle est
+    // ouverte, et revient sur l'élément qui l'a ouverte à la fermeture)
+    (function setupModalFocusTrap() {
+        const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        let lastFocusedBeforeModal = null;
+
+        document.querySelectorAll(".modal").forEach(function(modal) {
+            const observer = new MutationObserver(function() {
+                if (modal.style.display === "block") {
+                    lastFocusedBeforeModal = document.activeElement;
+                    const focusables = modal.querySelectorAll(focusableSelector);
+                    if (focusables.length) focusables[0].focus();
+                } else if (lastFocusedBeforeModal) {
+                    lastFocusedBeforeModal.focus();
+                    lastFocusedBeforeModal = null;
+                }
+            });
+            observer.observe(modal, { attributes: true, attributeFilter: ["style"] });
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key !== "Tab") return;
+            const openModal = Array.from(document.querySelectorAll(".modal")).find(function(m) {
+                return m.style.display === "block";
+            });
+            if (!openModal) return;
+            const focusables = Array.from(openModal.querySelectorAll(focusableSelector));
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
+    })();
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" || event.key === "Esc") {
+            document.querySelectorAll(".modal").forEach(function(modal) {
+                if (modal.style.display === "block") {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+        }
+    });
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
@@ -221,6 +281,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Modale "Nos méthodes pédagogiques"
+    const methodesPedagogiquesModal = document.getElementById("methodesPedagogiquesModal");
+    const openMethodesPedagogiquesBtn = document.getElementById("openMethodesPedagogiquesBtn");
+    if (openMethodesPedagogiquesBtn && methodesPedagogiquesModal) {
+        openMethodesPedagogiquesBtn.addEventListener("click", function() {
+            methodesPedagogiquesModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
+    // Modale "Vos besoins et prérequis"
+    const besoinsPrerequisModal = document.getElementById("besoinsPrerequisModal");
+    const openBesoinsPrerequisBtn = document.getElementById("openBesoinsPrerequisBtn");
+    if (openBesoinsPrerequisBtn && besoinsPrerequisModal) {
+        openBesoinsPrerequisBtn.addEventListener("click", function() {
+            besoinsPrerequisModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+    }
+
     // Blocs dépliables "Les sensibilisations / formations immersives / accompagnements"
     window.toggleSolutionSection = function(sectionId) {
         const section = document.getElementById(sectionId);
@@ -260,6 +340,8 @@ document.addEventListener("DOMContentLoaded", function() {
     setupContactModalClose(contactModal2);
     setupContactModalClose(contactModal3);
     setupContactModalClose(rdvModal);
+    setupContactModalClose(methodesPedagogiquesModal);
+    setupContactModalClose(besoinsPrerequisModal);
 
     // Gestion des formulaires de contact — Netlify Forms gère nativement la
     // soumission (data-netlify="true" ajouté directement dans le HTML).
