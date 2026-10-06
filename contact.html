@@ -100,7 +100,8 @@
     <!-- Contact Form Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-file-invoice icon"></i> Demander un devis</h2>
+            <h2 class="section-title"><i class="fas fa-file-invoice icon"></i> Demander un devis ou échanger sur vos besoins</h2>
+            <p class="contact-intro">Chaque action débute par une analyse de vos besoins. Durée, public, prérequis, lieu et dates sont définis avec vous. Les champs marqués d'un astérisque sont obligatoires.</p>
             <form
                 class="contact-form"
                 id="devis-form"
@@ -115,8 +116,28 @@
                     <label for="bot-field-contact">Ne pas remplir si vous êtes humain :</label><input id="bot-field-contact" name="bot-field" aria-label="Ne pas remplir ce champ" />
                 </p>
                 <div class="form-group">
+                    <label for="nom"><i class="fas fa-user icon"></i> Nom *</label>
+                    <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="structure"><i class="fas fa-building icon"></i> Structure *</label>
+                    <input type="text" id="structure" name="structure" autocomplete="organization" placeholder="Ex : conseil départemental, ARS, établissement…" required>
+                </div>
+                <div class="form-group">
+                    <label for="fonction">Fonction</label>
+                    <input type="text" id="fonction" name="fonction" autocomplete="organization-title">
+                </div>
+                <div class="form-group">
                     <label for="email"><i class="fas fa-at icon"></i> Votre adresse email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone (facultatif)</label>
+                    <input type="tel" id="telephone" name="telephone" autocomplete="tel">
                 </div>
                 <div class="form-group">
                     <label for="solutions"><i class="fas fa-lightbulb icon"></i> Solutions sur lesquelles vous souhaitez un renseignement</label>
@@ -124,15 +145,37 @@
                         <option value="">Sélectionnez une solution</option>
                         <option value="sensibilisations">Les sensibilisations</option>
                         <option value="formations-immersives">Les formations immersives</option>
-                        <option value="accompagnements">Les accompagnements</option>
-                        <option value="packs">Les packs</option>
+                        <option value="accompagnements">Les accompagnements et services</option>
                         <option value="autre">Autre</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message"><i class="fas fa-comment-dots icon"></i> Message (facultatif)</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Décrivez vos besoins ou posez vos questions..."></textarea>
+                    <label for="participants">Nombre de participants estimé</label>
+                    <input type="number" id="participants" name="participants" min="1" max="50">
                 </div>
+                <div class="form-group">
+                    <label for="format">Format souhaité</label>
+                    <select id="format" name="format">
+                        <option value="">À définir ensemble</option>
+                        <option value="Sur site chez le commanditaire">Sur site chez le commanditaire</option>
+                        <option value="En visio">En visio</option>
+                        <option value="Hybride">Hybride</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dates">Période ou dates souhaitées</label>
+                    <input type="text" id="dates" name="dates" placeholder="Ex : novembre 2026">
+                </div>
+                <div class="form-group">
+                    <label for="accessibilite">Besoins d'accessibilité ou d'adaptation à anticiper (facultatif)</label>
+                    <textarea id="accessibilite" name="accessibilite" rows="2" aria-describedby="accessibilite-hint"></textarea>
+                    <p class="form-hint" id="accessibilite-hint">Ne communiquez pas d'informations médicales : notre référente handicap vous recontactera.</p>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment-dots icon"></i> Message (facultatif)</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Décrivez vos besoins, le public concerné, le contexte ou posez vos questions..."></textarea>
+                </div>
+                <p class="form-hint">Ces informations servent uniquement à répondre à votre demande. Voir la politique de confidentialité (« Données personnelles », en bas de page).</p>
                 <button type="submit" class="btn-primary">Envoyer la demande</button>
             </form>
         </div>

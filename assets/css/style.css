@@ -1689,13 +1689,21 @@ Utilise les variables CSS existantes — aucune couleur en dur
 }
 
 /* ============================================================
-   Grille des 3 cartes — modalités pédagogiques + RDV
+   Modalités pédagogiques : 3 cartes numérotées + fiche pratique
+   Charte : #385F6B (bleu) aux extrémités, #F49F0A (orange) au centre
+   Contrastes : blanc sur #385F6B = 7:1 ; #2d3748 sur #F49F0A = 5,6:1
    ============================================================ */
+.pedago-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: -1.5rem auto 2.25rem;
+    color: var(--text-dark);
+}
+
 .pedago-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-top: 1.5rem;
     align-items: stretch;
 }
 
@@ -1706,41 +1714,172 @@ Utilise les variables CSS existantes — aucune couleur en dur
 }
 
 .pedago-card {
-    background: var(--white);
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    padding: 2rem 1.75rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
 }
 
-.pedago-card-kicker {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted-accessible);
-    margin: 0;
+.pedago-card-centre {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.pedago-card-num {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.pedago-card-centre .pedago-card-num {
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 .pedago-card h3 {
-    font-size: 1.15rem;
-    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
     margin: 0;
-}
-
-.pedago-card.rdv-callout h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
+    color: inherit;
 }
 
 .pedago-card p {
-    font-size: 0.92rem;
-    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
+    color: inherit;
+    flex: 1;
+}
+
+.pedago-card .btn-light,
+.pedago-card .btn-primary {
+    margin-top: auto;
+}
+
+/* Boutons des cartes : même police que le site, lisibles sur chaque fond */
+.btn-primary,
+.btn-secondary,
+.btn-light {
+    font-family: inherit;
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.pedago-card-centre .btn-primary:hover {
+    background: var(--text-dark);
+}
+
+.pedago-card .btn-light:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+.pedago-card-centre .btn-primary:focus-visible {
+    outline: 3px solid var(--text-dark);
+    outline-offset: 3px;
+}
+
+/* Fiche pratique : durée, public, lieu, dates, tarif, accessibilité */
+.pedago-pratique {
+    margin-top: 2.5rem;
+}
+
+.pedago-pratique h3 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+}
+
+.pedago-pratique-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .pedago-pratique-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pedago-pratique-grid li {
+    background: var(--white);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.25rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+}
+
+.pedago-pratique-grid .icon {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    width: 1.6rem;
+    text-align: center;
+    margin-top: 0.15rem;
+}
+
+.pedago-pratique-grid strong {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: 0.15rem;
+}
+
+.pedago-pratique-grid span {
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.pedago-pratique-grid a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* Aide sous les champs de formulaire et introduction de la page contact */
+.form-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted-accessible);
+    margin: 0.35rem 0 0;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: -1.5rem auto 2rem;
 }
