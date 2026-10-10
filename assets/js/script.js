@@ -329,17 +329,17 @@ document.addEventListener("DOMContentLoaded", function() {
             if (id !== sectionId) setSolutionSection(id, false);
         });
         setSolutionSection(sectionId, true);
-        section.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+        const scrollTarget = sectionId === "section-accompagnements" ? document.getElementById("solutions-banner") : section;
+        if (scrollTarget) scrollTarget.scrollIntoView({ behavior: scrollBehavior, block: "start" });
     };
 
     // Replie un bloc et ramène l'utilisateur sur les trois grands blocs du haut
     window.closeSolutionSection = function(sectionId) {
         setSolutionSection(sectionId, false);
-        const topGrid = document.querySelector(".solutions-nav-grid:not(.solutions-nav-grid-small)");
-        if (topGrid) {
-            topGrid.scrollIntoView({ behavior: scrollBehavior, block: "center" });
-            const topBtn = topGrid.querySelector('[aria-controls="' + sectionId + '"]');
-            if (topBtn) topBtn.focus({ preventScroll: true });
+        const topBtn = document.querySelector('.solutions-top-btn[aria-controls="' + sectionId + '"]');
+        if (topBtn) {
+            topBtn.scrollIntoView({ behavior: scrollBehavior, block: "center" });
+            topBtn.focus({ preventScroll: true });
         }
     };
 

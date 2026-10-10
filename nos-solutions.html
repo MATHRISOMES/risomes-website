@@ -51,35 +51,165 @@
                 <img src="assets/images/Fichier15@2x.png" alt="" style="height:1em; width:auto;">
                 Nos solutions
             </h1>
-            <p class="page-subtitle">Des formations, accompagnements et services adaptés à vos besoins</p>
+            <p class="page-subtitle">Des accompagnements, conseils et formations sur mesure et adaptés à vos besoins</p>
         </div>
     </section>
 
-    <!-- Navigation par blocs dépliables -->
-    <section class="section" style="padding-bottom: 0;">
+    <!-- Bandeau Conseil et accompagnement -->
+    <section class="section" style="padding-bottom: 0;" id="solutions-top">
         <div class="container">
-            <div class="solutions-nav-grid">
-                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
+            <button type="button" class="solutions-banner solutions-top-btn" id="solutions-banner" onclick="toggleSolutionSection('section-accompagnements')" aria-expanded="false" aria-controls="section-accompagnements">
+                <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-handshake"></i></span>
+                <span class="nav-card-text">
+                    <span class="nav-card-title">Conseil et accompagnement</span>
+                    <span class="nav-card-desc">Identifier vos risques et mettre en place des process qui sécurisent les pratiques de vos professionnels et rendent vos décisions robustes, au service de la qualité et de la protection des publics vulnérables.</span>
+                </span>
+                <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Conseil et accompagnement : contenu du bandeau -->
+    <section class="section solutions-panel-section" id="section-accompagnements" style="display:none;" aria-labelledby="les-accompagnements">
+        <div class="container">
+            <div class="solutions-panel">
+                <h2 class="visually-hidden" id="les-accompagnements">Conseil et accompagnement</h2>
+                <div class="conseil-grid">
+                    <div class="conseil-card">
+                        <span class="conseil-num" aria-hidden="true">1</span>
+                        <h3>Des décisions plus solides</h3>
+                        <p>L'appropriation par vos équipes de méthodologies et de repères juridiques et réglementaires qui sécurisent vos décisions en qualité d'autorité, sans se substituer à votre service juridique.</p>
+                    </div>
+                    <div class="conseil-card">
+                        <span class="conseil-num" aria-hidden="true">2</span>
+                        <h3>Une culture commune</h3>
+                        <p>Créer un socle commun au sein de vos équipes sur l'inspection, le contrôle et les enquêtes administratives, en s'appuyant sur une cartographie des risques partagée et adaptée aux réalités de votre territoire.</p>
+                    </div>
+                    <div class="conseil-card">
+                        <span class="conseil-num" aria-hidden="true">3</span>
+                        <h3>Votre terrain devient une ressource</h3>
+                        <p>Nous analysons avec vous vos expériences pour en faire un savoir collectif.</p>
+                    </div>
+                    <div class="conseil-card">
+                        <span class="conseil-num" aria-hidden="true">4</span>
+                        <h3>Des pratiques cohérentes</h3>
+                        <p>Nous renforçons vos pratiques par des outils de pilotage et des process structurants.</p>
+                    </div>
+                </div>
+
+                <div class="conseil-pratique">
+                    <h3>En pratique</h3>
+                    <ul class="conseil-pratique-grid">
+                        <li><strong>Format et durée</strong><span>Sur mesure, du conseil ponctuel à l'accompagnement sur 3 mois, 6 mois ou 1 an, ou sur une base journalière.</span></li>
+                        <li><strong>Public</strong><span>Dirigeants, cadres et responsables de services des collectivités et des établissements.</span></li>
+                        <li><strong>Lieu</strong><span>À distance, ou sur site pour certains temps d'accompagnement.</span></li>
+                        <li><strong>Livrables</strong><span>Selon la mission : analyses, scénarios de structuration, process, tableaux de bord et outils de pilotage.</span></li>
+                        <li><strong>Dates et délais d'accès</strong><span>Dates fixées avec vous. L'accompagnement démarre après la signature du marché ou du devis.</span></li>
+                        <li><strong>Tarif</strong><span>Sur devis, selon la mission : sur une base journalière, ou à l'heure pour le conseil.</span></li>
+
+                    </ul>
+                </div>
+
+                <h3 class="solutions-panel-subtitle">Nos accompagnements en détail</h3>
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <h3><i class="fas fa-calendar-alt icon"></i> Supervision technique sur 6 mois</h3>
+                        <p><strong>Description :</strong> Programme d'accompagnement pour une supervision technique sur 6 mois, avec des rendez-vous réguliers pour s'assurer du caractère opérationnel des missions, un suivi personnalisé pour atteindre rapidement les premiers objectifs. (2 questions par mois et deux visio de 3h ou deux retours sur site (une demie journée, frais de transports non compris).)</p>
+                        <p><strong>Pour qui :</strong> Pour les cadres et les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-calendar-check icon"></i> Accompagnement 3 mois</h3>
+                        <p><strong>Description :</strong> Suivi personnalisé sur 3 mois pour atteindre rapidement les premiers objectifs et revoir les points de méthodes qui questionnent (1 question par mois et une visio de 3h).</p>
+                        <p><strong>Pour qui :</strong> Pour les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-calendar-plus icon"></i> Accompagnement 6 mois</h3>
+                        <p><strong>Description :</strong> Suivi sur 6 mois, parfait pour installer des changements durables. Inclut des points d'étape sur l'avancée de la mission et un accompagnement pour veiller à l'intégration des éléments de formations par les agents. (1 question par mois, 2 accompagnements, dont 1 possible sur site (demie journée), frais de transports non compris).</p>
+                        <p><strong>Pour qui :</strong> Pour les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-calendar-alt icon"></i> Accompagnement sur 1 an</h3>
+                        <p><strong>Description :</strong> Accompagnement complet sur 12 mois, pour un suivi stratégique et opérationnel à long terme. Idéal pour les services souhaitant structurer leur activité et réaliser un RETEX. (10 questions sur 12 mois, 2 visio de 3h et un RETEX d'une journée sur site (frais de transports non compris).)</p>
+                        <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
+                    </div>
+
+                    <div class="solution-card">
+    <h3><i class="fas fa-history icon"></i> Structurer un RETEX & soutenir les pratiques (contrôle/enquêtes)</h3>
+    	                    <p><strong>Description :</strong> Animation d’une journée de retour d’expérience (RETEX) en se basant sur les contrôles ou enquêtes réalisées par les participants. Dans un cadre méthodologique, formalisé et confidentiel, cette intervention permet d’analyser collectivement les pratiques, d’identifier les marges de progrès et de consolider les acquis professionnels.</p>
+    	                    <p><strong>Pour qui :</strong> Équipes ou services ayant conduit des contrôles ou enquêtes et souhaitant capitaliser sur leur expérience et renforcer leurs pratiques.</p>
+    	                    <p><strong>Objectifs :</strong> cette intervention permet de :</p>
+    	                    <ul class="objectifs-list">
+    	                        <li>organiser un retour d’expérience à partir d’une situation réelle</li>
+    	                        <li>identifier les réussites, les difficultés et les écarts rencontrés</li>
+    	                        <li>analyser les causes et les facteurs contributifs</li>
+    	                        <li>faire émerger des pistes d’amélioration collectives</li>
+    	                        <li>formaliser un plan d’action ou des recommandations opérationnelles</li>
+    	                    </ul>
+    	                    <p><strong>Valeur ajoutée :</strong> Transformer l’expérience terrain en ressource collective, renforcer la cohérence des pratiques et soutenir une dynamique d’amélioration continue.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-sitemap icon"></i> Structuration interne</h3>
+                        <p><strong>Description :</strong> Accompagnement complet sur mesure, adapté aux singularités de votre organisation. Nous proposons une analyse des besoins et une analyse des contraintes afin de présenter différents scénarios de structurations. L'expert en charge s'assurera du caractère opérationnel de l'organisation à définir et de la structuration d'une culture commune. (Sur une base journalière d'intervention, adaptée aux besoins.)</p>
+                        <p><strong>Pour qui :</strong> Pour les dirigeants et cadres souhaitant structurer l'activité de contrôle et de qualité au sein de leurs services</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-tools icon"></i> Accompagnement à la définition des besoins des outils de pilotage et ou de suivis</h3>
+                        <p><strong>Description :</strong> Accompagnement à la définition des besoins en matière d'outils personnalisés (tableaux de bord, reporting, automatisations, macro etc.) sur une base journalière, adaptée aux besoins spécifiques.</p>
+                        <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives.</p>
+                    </div>
+
+                    <div class="solution-card">
+                        <h3><i class="fas fa-question-circle icon"></i> SAV conseils par questions</h3>
+                        <p><strong>Description :</strong> Conseils techniques et personnalisés à distance, facturés à l'heure. Idéal pour les services qui souhaitent un suivi ponctuel ou des réponses rapides à leurs problématiques. (Expertises techniques ne se substituant pas à un conseil réalisé par un cabinet d'avocat).</p>
+                        <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives.</p>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <button class="btn-primary" id="openContactModalBtn3">Échanger sur votre organisation</button>
+                </div>
+                <div class="solutions-fold">
+                    <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
+                </div>
+                <p class="solutions-voir-aussi">Voir aussi</p>
+                <div class="solutions-nav-grid solutions-nav-grid-small">
+                    <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
+                        <i class="fas fa-chalkboard-teacher icon"></i>
+                        <span>Les sensibilisations</span>
+                        <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
+                        <i class="fas fa-graduation-cap icon"></i>
+                        <span>Les formations immersives</span>
+                        <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feuillets pour les agents -->
+    <section class="section" style="padding-top: 1.5rem; padding-bottom: 0;" id="solutions-agents">
+        <div class="container">
+            <p class="solutions-agents-label">Pour vos professionnels</p>
+            <div class="solutions-nav-grid solutions-nav-grid-agents">
+                <button type="button" class="solutions-nav-card solutions-top-btn card-agent" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
                     <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-chalkboard-teacher"></i></span>
                     <span class="nav-card-text">
                         <span class="nav-card-title">Les sensibilisations</span>
-                        <span class="nav-card-desc">Pour vos agents : une journée pour acquérir les repères essentiels.</span>
+                        <span class="nav-card-desc">Un temps pour acquérir les repères essentiels.</span>
                     </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
-                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
+                <button type="button" class="solutions-nav-card solutions-top-btn card-agent" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
                     <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
                     <span class="nav-card-text">
                         <span class="nav-card-title">Les formations immersives</span>
-                        <span class="nav-card-desc">Pour vos agents : jusqu'à 3 jours de cas pratiques et de mises en situation.</span>
-                    </span>
-                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-accompagnements')" aria-expanded="false" aria-controls="section-accompagnements">
-                    <span class="nav-card-icon" aria-hidden="true"><i class="fas fa-handshake"></i></span>
-                    <span class="nav-card-text">
-                        <span class="nav-card-title">Les accompagnements et services</span>
-                        <span class="nav-card-desc">Pour vos directions et vos services : conseil, analyses, process et outils de pilotage.</span>
+                        <span class="nav-card-desc">Jusqu'à 3 jours de cas pratiques et de mises en situation.</span>
                     </span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
@@ -91,7 +221,7 @@
     <section class="section" id="section-sensibilisations" style="display:none;">
         <div class="container">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher icon"></i> Les sensibilisations</h2>
-            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État. Nos formations sont mises à jour régulièrement afin de tenir compte des évolutions législatives et réglementaires.</p>
             <div class="solutions-fold">
                 <button type="button" class="btn-fold" onclick="closeSolutionSection('section-sensibilisations')" aria-controls="section-sensibilisations"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
             </div>
@@ -108,6 +238,7 @@
 	                        <li>recueillir et analyser la parole des usagers dans un cadre sécurisé et respectueux</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Intégrer la parole des usagers dans les pratiques de contrôle ou d’enquête, en conciliant exigences réglementaires et éthique professionnelle.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -122,6 +253,7 @@
 	                        <li>formuler des constats argumentés à partir des documents analysés</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Objectiver les constats et mieux comprendre les logiques de pilotage des établissements.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -136,6 +268,7 @@
 	                        <li>proposer les actions de prévention ou de suivi appropriées</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Structurer une veille active au service du contrôle et de la démarche d’amélioration continue de la qualité.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -150,6 +283,7 @@
 	                        <li>formuler des points de vigilance adaptés au contexte de l’établissement</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Actualité réglementaire.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -164,6 +298,7 @@
 	                        <li>rédiger des constats et des rapports étayés</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Fiabiliser les constats et produire des rapports argumentés, cohérents et exploitables.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -179,6 +314,7 @@
 		                        <li>formaliser des constats objectifs et exploitables</li>
 		                    </ul>
 		                    <p><strong>Valeur ajoutée :</strong> Conduire un contrôle structuré en tenant compte des spécificités du secteur petite enfance.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
 	                </div>
 
 	                <div class="solution-card">
@@ -193,6 +329,7 @@
 	                        <li>identifier les suites à donner et les interlocuteurs appropriés</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Objectiver les constats et s'assurer de leur adéquation avec la politique de bientraitance.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
 	                </div>
 	            </div>
             <div class="cta-section">
@@ -221,7 +358,7 @@
     <section class="section bg-light" id="section-formations-immersives" style="display:none;">
         <div class="container">
             <h2 class="section-title" id="les-services-de-formations-immersives"><i class="fas fa-graduation-cap icon"></i> Les services de formations immersives</h2>
-            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État.</p>
+            <p style="text-align:center; font-style: italic; font-size: 0.8rem; color: var(--text-muted-accessible); margin-top: -0.75rem; margin-bottom: 1.5rem;">Enregistré sous le numéro 84381099938. Cet enregistrement ne vaut pas agrément de l'État. Nos formations sont mises à jour régulièrement afin de tenir compte des évolutions législatives et réglementaires.</p>
             <div class="solutions-fold">
                 <button type="button" class="btn-fold" onclick="closeSolutionSection('section-formations-immersives')" aria-controls="section-formations-immersives"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
             </div>
@@ -239,6 +376,7 @@
 	                        <li>rédiger une conclusion argumentée, objective et conforme au cadre juridique</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Conduire des enquêtes dans le respect du cadre juridique.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -254,6 +392,7 @@
 	                        <li>proposer des actions de prévention adaptées</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Renforcer la prévention et la gestion des risques dans les EAJE.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -270,6 +409,7 @@
 	                        <li>formaliser des constats conformes au cadre réglementaire</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Renforcer l’efficacité des contrôles et les mobiliser comme leviers d’amélioration continue.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -285,6 +425,7 @@
 	                        <li>formaliser une décision et en assurer la traçabilité</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Structurer une réponse rapide et cohérente face à une situation critique</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
 
@@ -301,6 +442,7 @@
 	                        <li>rédiger des constats structurés et exploitables</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Permet d’adapter les pratiques aux réalités locales et de sécuriser les décisions prises dans le cadre des missions d’autorisation et de contrôle.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
                 </div>
 
                 <div class="solution-card">
@@ -316,6 +458,7 @@
 		                        <li>assurer la traçabilité des décisions et des suites données</li>
 		                    </ul>
 		                    <p><strong>Valeur ajoutée :</strong> Outiller les responsables pour analyser, documenter et prévenir les événements graves.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
 	                </div>
 
 	                <div class="solution-card">
@@ -331,6 +474,7 @@
 	                        <li>organiser le suivi de la mise en œuvre des mesures correctives</li>
 	                    </ul>
 	                    <p><strong>Valeur ajoutée :</strong> Sécuriser la mise en œuvre des suites données au contrôle et transformer les constats en leviers d’amélioration continue.</p>
+                    <p class="maj"><abbr title="Mise à jour">MAJ</abbr> 2026</p>
 	                </div>
             </div>
             <div class="cta-section">
@@ -349,93 +493,6 @@
                 <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-accompagnements')" aria-expanded="false" aria-controls="section-accompagnements">
                     <i class="fas fa-handshake icon"></i>
                     <span>Les accompagnements et services</span>
-                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accompagnements Section -->
-    <section class="section" id="section-accompagnements" style="display:none;">
-        <div class="container">
-            <h2 class="section-title" id="les-accompagnements"><i class="fas fa-handshake icon"></i> Les accompagnements</h2>
-            <div class="solutions-fold">
-                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
-            </div>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3><i class="fas fa-calendar-alt icon"></i> Supervision technique sur 6 mois</h3>
-                    <p><strong>Description :</strong> Programme d'accompagnement pour une supervision technique sur 6 mois, avec des rendez-vous réguliers pour s'assurer du caractère opérationnel des missions, un suivi personnalisé pour atteindre rapidement les premiers objectifs. (2 questions par mois et deux visio de 3h ou deux retours sur site (une demie journée, frais de transports non compris).)</p>
-                    <p><strong>Pour qui :</strong> Pour les cadres et les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-calendar-check icon"></i> Accompagnement 3 mois</h3>
-                    <p><strong>Description :</strong> Suivi personnalisé sur 3 mois pour atteindre rapidement les premiers objectifs et revoir les points de méthodes qui questionnent (1 question par mois et une visio de 3h).</p>
-                    <p><strong>Pour qui :</strong> Pour les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-calendar-plus icon"></i> Accompagnement 6 mois</h3>
-                    <p><strong>Description :</strong> Suivi sur 6 mois, parfait pour installer des changements durables. Inclut des points d'étape sur l'avancée de la mission et un accompagnement pour veiller à l'intégration des éléments de formations par les agents. (1 question par mois, 2 accompagnements, dont 1 possible sur site (demie journée), frais de transports non compris).</p>
-                    <p><strong>Pour qui :</strong> Pour les professionnels des services ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-calendar-alt icon"></i> Accompagnement sur 1 an</h3>
-                    <p><strong>Description :</strong> Accompagnement complet sur 12 mois, pour un suivi stratégique et opérationnel à long terme. Idéal pour les services souhaitant structurer leur activité et réaliser un RETEX. (10 questions sur 12 mois, 2 visio de 3h et un RETEX d'une journée sur site (frais de transports non compris).)</p>
-                    <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives et ayant suivi nos actions de formations.</p>
-                </div>
-
-                <div class="solution-card">
-<h3><i class="fas fa-history icon"></i> Structurer un RETEX & soutenir les pratiques (contrôle/enquêtes)</h3>
-	                    <p><strong>Description :</strong> Animation d’une journée de retour d’expérience (RETEX) en se basant sur les contrôles ou enquêtes réalisées par les participants. Dans un cadre méthodologique, formalisé et confidentiel, cette intervention permet d’analyser collectivement les pratiques, d’identifier les marges de progrès et de consolider les acquis professionnels.</p>
-	                    <p><strong>Pour qui :</strong> Équipes ou services ayant conduit des contrôles ou enquêtes et souhaitant capitaliser sur leur expérience et renforcer leurs pratiques.</p>
-	                    <p><strong>Objectifs :</strong> cette intervention permet de :</p>
-	                    <ul class="objectifs-list">
-	                        <li>organiser un retour d’expérience à partir d’une situation réelle</li>
-	                        <li>identifier les réussites, les difficultés et les écarts rencontrés</li>
-	                        <li>analyser les causes et les facteurs contributifs</li>
-	                        <li>faire émerger des pistes d’amélioration collectives</li>
-	                        <li>formaliser un plan d’action ou des recommandations opérationnelles</li>
-	                    </ul>
-	                    <p><strong>Valeur ajoutée :</strong> Transformer l’expérience terrain en ressource collective, renforcer la cohérence des pratiques et soutenir une dynamique d’amélioration continue.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-sitemap icon"></i> Structuration interne</h3>
-                    <p><strong>Description :</strong> Accompagnement complet sur mesure, adapté aux singularités de votre organisation. Nous proposons une analyse des besoins et une analyse des contraintes afin de présenter différents scénarios de structurations. L'expert en charge s'assurera du caractère opérationnel de l'organisation à définir et de la structuration d'une culture commune. (Sur une base journalière d'intervention, adaptée aux besoins.)</p>
-                    <p><strong>Pour qui :</strong> Pour les dirigeants et cadres souhaitant structurer l'activité de contrôle et de qualité au sein de leurs services</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-tools icon"></i> Accompagnement à la définition des besoins des outils de pilotage et ou de suivis</h3>
-                    <p><strong>Description :</strong> Accompagnement à la définition des besoins en matière d'outils personnalisés (tableaux de bord, reporting, automatisations, macro etc.) sur une base journalière, adaptée aux besoins spécifiques.</p>
-                    <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives.</p>
-                </div>
-
-                <div class="solution-card">
-                    <h3><i class="fas fa-question-circle icon"></i> SAV conseils par questions</h3>
-                    <p><strong>Description :</strong> Conseils techniques et personnalisés à distance, facturés à l'heure. Idéal pour les services qui souhaitent un suivi ponctuel ou des réponses rapides à leurs problématiques. (Expertises techniques ne se substituant pas à un conseil réalisé par un cabinet d'avocat).</p>
-                    <p><strong>Pour qui :</strong> Pour les professionnels des services et les cadres ayant des missions de contrôles, d'inspections ou en charge des enquêtes administratives.</p>
-                </div>
-            </div>
-            <div class="cta-section">
-                <button class="btn-primary" id="openContactModalBtn3">Contactez-nous pour vous renseigner sur les accompagnements et demander un devis</button>
-            </div>
-            <div class="solutions-fold">
-                <button type="button" class="btn-fold" onclick="closeSolutionSection('section-accompagnements')" aria-controls="section-accompagnements"><i class="fas fa-chevron-up" aria-hidden="true"></i> Replier cette section</button>
-            </div>
-            <p class="solutions-voir-aussi">Voir aussi</p>
-            <div class="solutions-nav-grid solutions-nav-grid-small">
-                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-sensibilisations')" aria-expanded="false" aria-controls="section-sensibilisations">
-                    <i class="fas fa-chalkboard-teacher icon"></i>
-                    <span>Les sensibilisations</span>
-                    <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="solutions-nav-card" onclick="toggleSolutionSection('section-formations-immersives')" aria-expanded="false" aria-controls="section-formations-immersives">
-                    <i class="fas fa-graduation-cap icon"></i>
-                    <span>Les formations immersives</span>
                     <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
                 </button>
             </div>
@@ -474,7 +531,7 @@
             </div>
 
             <div class="pedago-pratique">
-                <h3>En pratique : formations et sensibilisations</h3>
+                <h3>En pratique : sensibilisations et formations</h3>
                 <ul class="pedago-pratique-grid">
                     <li><i class="fas fa-clock icon" aria-hidden="true"></i><div><strong>Durée</strong><span>De 1 jour (sensibilisations) à 3 jours (formations immersives).</span></div></li>
                     <li><i class="fas fa-users icon" aria-hidden="true"></i><div><strong>Public et prérequis</strong><span>Cadres et professionnels en charge du contrôle, de l'inspection ou des enquêtes administratives (public précisé sur chaque fiche). Les prérequis sont définis pour chaque action avec le commanditaire, selon le niveau des participants et sa demande.</span></div></li>
@@ -482,18 +539,6 @@
                     <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Les dates sont fixées avec le commanditaire. Après la signature du marché ou du devis, l'action est conçue sur mesure et organisée à ces dates.</span></div></li>
                     <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon l'analyse des besoins, la taille du groupe et le format (sensibilisation ou formation).</span></div></li>
                     <li><i class="fas fa-universal-access icon" aria-hidden="true"></i><div><strong>Accessibilité</strong><span>Référente handicap : Mathilde Théry (<a href="mailto:contact@risomes.fr">contact@risomes.fr</a>). Elle vérifie en amont de chaque intervention les conditions de mise en œuvre et l'accessibilité des locaux, et adapte si besoin les modalités pédagogiques.</span></div></li>
-                </ul>
-            </div>
-
-            <div class="pedago-pratique">
-                <h3>En pratique : accompagnement et conseil</h3>
-                <ul class="pedago-pratique-grid">
-                    <li><i class="fas fa-hourglass-half icon" aria-hidden="true"></i><div><strong>Format et durée</strong><span>Sur mesure, du conseil ponctuel à l'accompagnement sur 3 mois, 6 mois ou 1 an, ou sur une base journalière.</span></div></li>
-                    <li><i class="fas fa-user-tie icon" aria-hidden="true"></i><div><strong>Public</strong><span>Dirigeants, cadres et responsables de services des collectivités et des établissements.</span></div></li>
-                    <li><i class="fas fa-map-marker-alt icon" aria-hidden="true"></i><div><strong>Lieu</strong><span>À distance, ou sur site pour certains temps d'accompagnement (frais de déplacement non compris).</span></div></li>
-                    <li><i class="fas fa-tasks icon" aria-hidden="true"></i><div><strong>Livrables</strong><span>Selon la mission : analyses, scénarios de structuration, process, tableaux de bord et outils de pilotage.</span></div></li>
-                    <li><i class="fas fa-calendar-alt icon" aria-hidden="true"></i><div><strong>Dates et délais d'accès</strong><span>Dates fixées avec vous. L'accompagnement démarre après la signature du marché ou du devis.</span></div></li>
-                    <li><i class="fas fa-file-invoice icon" aria-hidden="true"></i><div><strong>Tarif</strong><span>Sur devis, selon la mission : sur une base journalière, ou à l'heure pour le conseil par questions.</span></div></li>
                 </ul>
             </div>
         </div>
@@ -808,15 +853,7 @@
                 </div>
                 <div class="form-group">
                     <label for="structure1">Structure *</label>
-                    <select id="structure1" name="structure" required>
-                        <option value="">Sélectionnez votre structure</option>
-                        <option value="ARS">ARS</option>
-                        <option value="Conseil départemental">Conseil départemental</option>
-                        <option value="CAF">CAF</option>
-                        <option value="PMI">PMI</option>
-                        <option value="DDETS">DDETS</option>
-                        <option value="autre">Autre</option>
-                    </select>
+                    <input type="text" id="structure1" name="structure" autocomplete="organization" placeholder="Ex : conseil départemental, ARS, établissement…" required>
                 </div>
                 <div class="form-group">
                     <label for="fonction1">Fonction</label>
@@ -898,15 +935,7 @@
                 </div>
                 <div class="form-group">
                     <label for="structure2">Structure *</label>
-                    <select id="structure2" name="structure" required>
-                        <option value="">Sélectionnez votre structure</option>
-                        <option value="ARS">ARS</option>
-                        <option value="Conseil départemental">Conseil départemental</option>
-                        <option value="CAF">CAF</option>
-                        <option value="PMI">PMI</option>
-                        <option value="DDETS">DDETS</option>
-                        <option value="autre">Autre</option>
-                    </select>
+                    <input type="text" id="structure2" name="structure" autocomplete="organization" placeholder="Ex : conseil départemental, ARS, établissement…" required>
                 </div>
                 <div class="form-group">
                     <label for="fonction2">Fonction</label>
@@ -988,15 +1017,7 @@
                 </div>
                 <div class="form-group">
                     <label for="structure3">Structure *</label>
-                    <select id="structure3" name="structure" required>
-                        <option value="">Sélectionnez votre structure</option>
-                        <option value="ARS">ARS</option>
-                        <option value="Conseil départemental">Conseil départemental</option>
-                        <option value="CAF">CAF</option>
-                        <option value="PMI">PMI</option>
-                        <option value="DDETS">DDETS</option>
-                        <option value="autre">Autre</option>
-                    </select>
+                    <input type="text" id="structure3" name="structure" autocomplete="organization" placeholder="Ex : conseil départemental, ARS, établissement…" required>
                 </div>
                 <div class="form-group">
                     <label for="fonction3">Fonction</label>
