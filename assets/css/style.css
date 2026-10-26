@@ -2207,3 +2207,24 @@ section[id^="section-"] {
     text-decoration: none;
     cursor: help;
 }
+
+/* Qualiopi : visible uniquement dans les sections formations */
+.qualiopi-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: 620px;
+    margin: 0 auto 1.75rem;
+    padding: 1.1rem 1.25rem;
+    background: #fff;
+    border: 1px solid #e3e8ec;
+    border-radius: 10px;
+    text-align: center;
+}
+.qualiopi-bloc img { width: 210px; height: auto; display: block; }
+.qualiopi-bloc p { margin: 0; font-size: 0.85rem; line-height: 1.55; color: var(--text-muted-accessible); }
+.qualiopi-bloc .qualiopi-mention { color: #1a2a33; }
+.qualiopi-bloc strong { color: #385F6B; }
+.qualiopi-bloc a { color: #385F6B; font-weight: 600; text-decoration: underline; }
+.qualiopi-bloc a:focus-visible { outline: 3px solid #F49F0A; outline-offset: 2px; }
