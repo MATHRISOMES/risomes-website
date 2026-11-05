@@ -20,14 +20,6 @@
     # Force HTTPS pendant 1 an (une fois bien testé en HTTPS)
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
-# --- Page intranet : non indexable + anti-cache agressif pour éviter
-#     qu'une page mise en cache reste visible après déconnexion ---
-[[headers]]
-  for = "/intranet.html"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
 # --- Canonicalisation des URLs : version propre (sans .html) ---
 # Ces règles doivent rester AVANT la règle catch-all ci-dessous.
 [[redirects]]
@@ -57,6 +49,31 @@
 [[redirects]]
   from = "/contact.html"
   to = "/contact"
+  status = 301
+  force = true
+
+# --- Ancien intranet : redirigé vers l'Espace d'échange ---
+[[redirects]]
+  from = "/intranet.html"
+  to = "/espace-echange"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intranet"
+  to = "/espace-echange"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intranet/*"
+  to = "/espace-echange"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/espace-echange.html"
+  to = "/espace-echange"
   status = 301
   force = true
 

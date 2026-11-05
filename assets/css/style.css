@@ -66,10 +66,11 @@ body {
 }
 
 .nav-logo {
-    width: 60px;
+    width: 150px;
     height: 60px;
     object-fit: contain;
-    margin: 0 auto; /* Centrer le logo */
+    object-position: left center;
+    margin: 0;
 }
 
 .nav-title {
@@ -684,7 +685,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: 2rem;
     align-items: center;
     margin: 0 auto 2rem; /* Centered footer content */
@@ -704,8 +705,9 @@ body {
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: .5rem 1.5rem;
 }
 
 .footer-links a {
@@ -885,6 +887,10 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+
+    .nav-logo {
+        width: 130px;
     }
 
     .hero-logo {
@@ -2228,3 +2234,13 @@ section[id^="section-"] {
 .qualiopi-bloc strong { color: #385F6B; }
 .qualiopi-bloc a { color: #385F6B; font-weight: 600; text-decoration: underline; }
 .qualiopi-bloc a:focus-visible { outline: 3px solid #F49F0A; outline-offset: 2px; }
+
+
+/* Espace d'échange */
+.ee-hero .container { text-align: center; }
+.ee-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: 1.5rem 0; padding: 0; }
+.ee-chips li { display: flex; align-items: center; gap: .5rem; background: var(--white); border: 1px solid #e3e8ec; border-radius: 999px; padding: .55rem 1.1rem; color: var(--primary-color); font-weight: 500; }
+.ee-chips li i { color: var(--secondary-color); }
+.ee-note { text-align: center; color: var(--text-muted-accessible); margin: 0 0 1rem; }
+.ee-rules { max-width: 760px; margin: 1.5rem auto 0; padding-left: 1.4rem; color: var(--text-dark); line-height: 1.7; }
+.ee-rules li { margin-bottom: .6rem; }
